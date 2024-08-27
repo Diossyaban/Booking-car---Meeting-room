@@ -1,0 +1,148 @@
+
+pdfDocument = {
+{BEGIN backgroundImage}
+	background: {
+		image: {$backgroundImage},
+		{BEGIN bgWidth}
+		imgWidth: {$bgWidth},
+		imgHeight: {$bgHeight},
+		{END bgWidth}
+	},
+{END backgroundImage}
+	styles: {
+				bodycell: {
+			fontSize:12,
+		},
+		headcell: {
+			fontSize:12,
+			bold: true
+		},
+
+	
+	},
+	defaultStyle: {
+		fontSize: 14,
+	},
+	"content": [
+								
+{
+	table: {
+	
+				
+		location: 'top',
+		
+		
+		widths: [
+								"*", 
+					 ],	
+		
+	
+		body: [
+				
+				[
+																{
+	cellId: 'c1',
+	col:0,
+	row:0,
+			
+		
+	//	static colspan/rowspan
+		
+			
+	
+	
+			"text": [
+		
+				
+			{"text":"{$jspagetitlelabel t_meeting_book import}","hidden":"{$item_hide_import_header}","fontSize":30},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+											],
+		
+		]
+	}
+}
+,
+		
+				
+								
+{
+	table: {
+	
+				
+		location: 'grid',
+		
+		
+		widths: [
+								"%", 
+					 ],	
+		
+			heights: [
+								
+			"%",
+			 
+				],
+	
+		body: [
+				
+				[
+																{
+	cellId: 'c1',
+	col:0,
+	row:0,
+			
+		
+	//	static colspan/rowspan
+		
+			
+	
+	
+			"text": [
+		
+				
+			{"text":{$t_meeting_user_pdfvalue},"hidden":"{$item_hide_import_field2}"},
+				
+				
+			{"text":{$t_meeting_desc_pdfvalue},"hidden":"{$item_hide_import_field3}"},
+				
+				
+			{"text":{$user_participant_list_pdfvalue},"hidden":"{$item_hide_import_field9}"},
+				
+				
+			{"text":{$t_meeting_participant_type_pdfvalue},"hidden":"{$item_hide_import_field10}"},
+				
+				
+			{"text":{$t_meeting_total_participant_pdfvalue},"hidden":"{$item_hide_import_field11}"},
+				
+				
+			{"text":{$t_meeting_roomid_pdfvalue},"hidden":"{$item_hide_import_field1}"},
+				
+				
+			{"text":{$t_meeting_from_date_pdfvalue},"hidden":"{$item_hide_import_field4}"},
+				
+				
+			{"text":{$t_meeting_to_date_pdfvalue},"hidden":"{$item_hide_import_field5}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+											],
+		
+		]
+	}
+}
+,
+		
+					]
+}
+  

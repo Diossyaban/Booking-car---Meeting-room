@@ -1,0 +1,307 @@
+<?php
+			$optionsArray = array( 'details' => array( 'm_disposition' => array( 'displayPreview' => 2,
+'previewPageId' => '' ),
+'m_vehicle' => array( 'displayPreview' => 2,
+'previewPageId' => '' ) ),
+'captcha' => array( 'captcha' => false ),
+'fields' => array( 'gridFields' => array( 't_booking_to_date',
+'t_booking_user',
+'t_booking_destination',
+'t_booking_remarks',
+'t_booking_from_date' ),
+'searchRequiredFields' => array(  ),
+'searchPanelFields' => array(  ),
+'fieldItems' => array( 't_booking_to_date' => array( 'integrated_edit_field1' ),
+'t_booking_user' => array( 'integrated_edit_field2' ),
+'t_booking_destination' => array( 'integrated_edit_field11' ),
+'t_booking_remarks' => array( 'integrated_edit_field12' ),
+'t_booking_from_date' => array( 'integrated_edit_field' ) ) ),
+'pageLinks' => array( 'edit' => false,
+'add' => false,
+'view' => false,
+'print' => false ),
+'layoutHelper' => array( 'formItems' => array( 'formItems' => array( 'above-grid' => array( 'add_message' ),
+'below-grid' => array( 'add_save',
+'add_reset',
+'add_back_list',
+'add_cancel' ),
+'top' => array( 'add_header' ),
+'grid' => array( 'section' ),
+'section' => array( 'integrated_edit_field2',
+'integrated_edit_field12',
+'integrated_edit_field1',
+'integrated_edit_field11',
+'integrated_edit_field' ) ),
+'formXtTags' => array( 'above-grid' => array( 'message_block' ) ),
+'itemForms' => array( 'add_message' => 'above-grid',
+'add_save' => 'below-grid',
+'add_reset' => 'below-grid',
+'add_back_list' => 'below-grid',
+'add_cancel' => 'below-grid',
+'add_header' => 'top',
+'section' => 'grid',
+'integrated_edit_field2' => 'section',
+'integrated_edit_field12' => 'section',
+'integrated_edit_field1' => 'section',
+'integrated_edit_field11' => 'section',
+'integrated_edit_field' => 'section' ),
+'itemLocations' => array( 'section' => array( 'location' => 'grid',
+'cellId' => 'c3' ),
+'integrated_edit_field2' => array( 'location' => 'section',
+'cellId' => 'c9' ),
+'integrated_edit_field12' => array( 'location' => 'section',
+'cellId' => 'c10' ),
+'integrated_edit_field1' => array( 'location' => 'section',
+'cellId' => 'c11' ),
+'integrated_edit_field11' => array( 'location' => 'section',
+'cellId' => 'c12' ),
+'integrated_edit_field' => array( 'location' => 'section',
+'cellId' => 'c13' ) ),
+'itemVisiblity' => array(  ) ),
+'itemsByType' => array( 'add_header' => array( 'add_header' ),
+'add_back_list' => array( 'add_back_list' ),
+'add_cancel' => array( 'add_cancel' ),
+'add_message' => array( 'add_message' ),
+'add_save' => array( 'add_save' ),
+'add_reset' => array( 'add_reset' ),
+'integrated_edit_field' => array( 'integrated_edit_field1',
+'integrated_edit_field2',
+'integrated_edit_field11',
+'integrated_edit_field12',
+'integrated_edit_field' ),
+'section' => array( 'section' ) ),
+'cellMaps' => array( 'grid' => array( 'cells' => array( 'c3' => array( 'cols' => array( 0 ),
+'rows' => array( 0 ),
+'tags' => array(  ),
+'items' => array( 'section' ),
+'fixedAtServer' => true,
+'fixedAtClient' => false ) ),
+'width' => 1,
+'height' => 1 ),
+'section' => array( 'cells' => array( 'c14' => array( 'cols' => array( 0 ),
+'rows' => array( 0 ),
+'tags' => array(  ),
+'items' => array(  ),
+'fixedAtServer' => false,
+'fixedAtClient' => false ),
+'c15' => array( 'cols' => array( 1 ),
+'rows' => array( 0 ),
+'tags' => array(  ),
+'items' => array(  ),
+'fixedAtServer' => false,
+'fixedAtClient' => false ),
+'c12' => array( 'cols' => array( 0 ),
+'rows' => array( 1 ),
+'tags' => array(  ),
+'items' => array( 'integrated_edit_field11' ),
+'fixedAtServer' => true,
+'fixedAtClient' => false ),
+'c13' => array( 'cols' => array( 1 ),
+'rows' => array( 1 ),
+'tags' => array(  ),
+'items' => array( 'integrated_edit_field' ),
+'fixedAtServer' => true,
+'fixedAtClient' => false ),
+'c10' => array( 'cols' => array( 0 ),
+'rows' => array( 2 ),
+'tags' => array(  ),
+'items' => array( 'integrated_edit_field12' ),
+'fixedAtServer' => true,
+'fixedAtClient' => false ),
+'c11' => array( 'cols' => array( 1 ),
+'rows' => array( 2 ),
+'tags' => array(  ),
+'items' => array( 'integrated_edit_field1' ),
+'fixedAtServer' => true,
+'fixedAtClient' => false ),
+'c8' => array( 'cols' => array( 0 ),
+'rows' => array( 3 ),
+'tags' => array(  ),
+'items' => array(  ),
+'fixedAtServer' => false,
+'fixedAtClient' => false ),
+'c9' => array( 'cols' => array( 1 ),
+'rows' => array( 3 ),
+'tags' => array(  ),
+'items' => array( 'integrated_edit_field2' ),
+'fixedAtServer' => true,
+'fixedAtClient' => false ) ),
+'width' => 2,
+'height' => 4 ) ) ),
+'loginForm' => array( 'loginForm' => 3 ),
+'page' => array( 'verticalBar' => false,
+'labeledButtons' => array( 'update_records' => array(  ),
+'print_pages' => array(  ),
+'register_activate_message' => array(  ),
+'details_found' => array(  ) ),
+'hasCustomButtons' => false,
+'customButtons' => array(  ),
+'hasNotifications' => false ),
+'misc' => array( 'type' => 'add',
+'breadcrumb' => false ),
+'events' => array( 'maps' => array(  ),
+'mapsData' => array(  ),
+'buttons' => array(  ) ) );
+			$pageArray = array( 'id' => 'add',
+'type' => 'add',
+'layoutId' => 'nomenu',
+'disabled' => 0,
+'default' => 0,
+'forms' => array( 'above-grid' => array( 'modelId' => 'add-above-grid',
+'grid' => array( array( 'cells' => array( array( 'cell' => 'c1' ) ),
+'section' => '' ) ),
+'cells' => array( 'c1' => array( 'model' => 'c1',
+'items' => array( 'add_message' ) ) ),
+'deferredItems' => array(  ),
+'recsPerRow' => 1 ),
+'below-grid' => array( 'modelId' => 'add-below-grid',
+'grid' => array( array( 'cells' => array( array( 'cell' => 'c1' ) ),
+'section' => '' ) ),
+'cells' => array( 'c1' => array( 'model' => 'c1',
+'items' => array( 'add_save',
+'add_reset',
+'add_back_list',
+'add_cancel' ) ) ),
+'deferredItems' => array(  ),
+'recsPerRow' => 1 ),
+'top' => array( 'modelId' => 'add-header',
+'grid' => array( array( 'cells' => array( array( 'cell' => 'c1' ) ),
+'section' => '' ) ),
+'cells' => array( 'c1' => array( 'model' => 'c1',
+'items' => array( 'add_header' ) ) ),
+'deferredItems' => array(  ),
+'recsPerRow' => 1 ),
+'grid' => array( 'modelId' => 'simple-edit',
+'grid' => array( array( 'cells' => array( array( 'cell' => 'c3' ) ),
+'section' => '' ) ),
+'cells' => array( 'c3' => array( 'model' => 'c3',
+'items' => array( 'section' ) ) ),
+'deferredItems' => array(  ),
+'columnCount' => 1,
+'inlineLabels' => false,
+'separateLabels' => false ),
+'section' => array( 'modelId' => 'simple-edit',
+'grid' => array( array( 'section' => '',
+'cells' => array( array( 'cell' => 'c14' ),
+array( 'cell' => 'c15' ) ) ),
+array( 'section' => '',
+'cells' => array( array( 'cell' => 'c12' ),
+array( 'cell' => 'c13' ) ) ),
+array( 'section' => '',
+'cells' => array( array( 'cell' => 'c10' ),
+array( 'cell' => 'c11' ) ) ),
+array( 'section' => '',
+'cells' => array( array( 'cell' => 'c8' ),
+array( 'cell' => 'c9' ) ) ) ),
+'cells' => array( 'c8' => array( 'model' => 'c1',
+'items' => array(  ) ),
+'c9' => array( 'model' => 'c1',
+'items' => array( 'integrated_edit_field2' ) ),
+'c10' => array( 'model' => 'c1',
+'items' => array( 'integrated_edit_field12' ) ),
+'c11' => array( 'model' => 'c1',
+'items' => array( 'integrated_edit_field1' ) ),
+'c12' => array( 'model' => 'c1',
+'items' => array( 'integrated_edit_field11' ) ),
+'c13' => array( 'model' => 'c1',
+'items' => array( 'integrated_edit_field' ) ),
+'c14' => array( 'model' => 'c1',
+'items' => array(  ) ),
+'c15' => array( 'model' => 'c1',
+'items' => array(  ) ) ),
+'deferredItems' => array(  ),
+'columnCount' => 1,
+'inlineLabels' => false,
+'separateLabels' => false ) ),
+'items' => array( 'add_header' => array( 'type' => 'add_header' ),
+'add_back_list' => array( 'type' => 'add_back_list' ),
+'add_cancel' => array( 'type' => 'add_cancel' ),
+'add_message' => array( 'type' => 'add_message' ),
+'add_save' => array( 'type' => 'add_save',
+'customCSS' => '/* Put  your custom CSS code here */
+
+.btn-primary {
+    color: #fff;
+    background-color: #BC9C22;
+    border-color: transparent;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-group.open .dropdown-toggle.btn-primary {
+    background-color: #e7c235;
+    border-color: #b6a35d;
+}
+.panel-info > .panel-heading .btn.btn-info {
+    color: #fff;
+    background-color: #BC9C22;
+    border-color: transparent;
+}
+.alert-warning {
+    background-color: #BC9C22;
+    border-color: #9d8426;
+    color: #fff;
+}
+.panel-info > .panel-heading .btn.btn-info:not(:hover) {
+    background-color: #BC9C22;
+}
+.label {
+  min-width: 100px !important;
+  display: inline-block !important
+}
+' ),
+'add_reset' => array( 'type' => 'add_reset' ),
+'integrated_edit_field1' => array( 'field' => 't_booking_to_date',
+'type' => 'integrated_edit_field',
+'orientation' => 0 ),
+'integrated_edit_field2' => array( 'field' => 't_booking_user',
+'type' => 'integrated_edit_field',
+'orientation' => 0 ),
+'integrated_edit_field11' => array( 'field' => 't_booking_destination',
+'type' => 'integrated_edit_field',
+'orientation' => 0 ),
+'integrated_edit_field12' => array( 'field' => 't_booking_remarks',
+'type' => 'integrated_edit_field',
+'orientation' => 0 ),
+'section' => array( 'type' => 'section',
+'title' => array( 'type' => 0,
+'text' => 'Add Booking' ),
+'location' => 'section',
+'bsStyle' => 'default',
+'panelType' => 3 ),
+'integrated_edit_field' => array( 'field' => 't_booking_from_date',
+'type' => 'integrated_edit_field',
+'orientation' => 0 ) ),
+'dbProps' => array(  ),
+'version' => 11,
+'imageItem' => array( 'type' => 'page_image' ),
+'imageBgColor' => '#f2f2f2',
+'controlsBgColor' => 'white',
+'imagePosition' => 'right',
+'pageCSS' => '/* Put  your custom CSS code here */
+
+.btn-primary {
+    color: #fff;
+    background-color: #BC9C22;
+    border-color: transparent;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-group.open .dropdown-toggle.btn-primary {
+    background-color: #e7c235;
+    border-color: #b6a35d;
+}
+.panel-info > .panel-heading .btn.btn-info {
+    color: #fff;
+    background-color: #BC9C22;
+    border-color: transparent;
+}
+.alert-warning {
+    background-color: #BC9C22;
+    border-color: #9d8426;
+    color: #fff;
+}
+.panel-info > .panel-heading .btn.btn-info:not(:hover) {
+    background-color: #BC9C22;
+}
+.label {
+  min-width: 100px !important;
+  display: inline-block !important
+}
+' );
+		?>
