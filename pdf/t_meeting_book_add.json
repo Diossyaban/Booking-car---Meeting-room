@@ -229,7 +229,7 @@ pdfDocument = {
 			"stack": [
 		
 				
-			{"text":[{"text":"{$jslabel t_meeting_book t_meeting_total_participant }","bold":true}," ",{$t_meeting_total_participant_pdfvalue}],"hidden":"{$item_hide_integrated_edit_field11}"},
+			{"text":[{"text":"{$jslabel t_meeting_book t_meeting_desc }","bold":true}," ",{$t_meeting_desc_pdfvalue}],"hidden":"{$item_hide_integrated_edit_field3}"},
 				
 		  ],
   "border": [ false, false, false, false ],
@@ -314,7 +314,7 @@ pdfDocument = {
 			"stack": [
 		
 				
-			{"text":[{"text":"{$jslabel t_meeting_book t_meeting_desc }","bold":true}," ",{$t_meeting_desc_pdfvalue}],"hidden":"{$item_hide_integrated_edit_field3}"},
+			{"text":[{"text":"{$jslabel t_meeting_book t_meeting_total_participant }","bold":true}," ",{$t_meeting_total_participant_pdfvalue}],"hidden":"{$item_hide_t_meeting_total_participant}"},
 				
 		  ],
   "border": [ false, false, false, false ],
@@ -341,7 +341,7 @@ pdfDocument = {
 			"stack": [
 		
 				
-			{"text":[{"text":"{$jslabel t_meeting_book t_meeting_roomid }","bold":true}," ",{$t_meeting_roomid_pdfvalue}],"hidden":"{$item_hide_integrated_edit_field1}"},
+			{"text":[{"text":"{$jslabel t_meeting_book t_meeting_roomid }","bold":true}," ",{$t_meeting_roomid_pdfvalue}],"hidden":"{$item_hide_t_meeting_roomid}"},
 				
 		  ],
   "border": [ false, false, false, false ],
@@ -426,7 +426,7 @@ pdfDocument = {
 			"stack": [
 		
 				
-			{"text":[{"text":"{$jslabel t_meeting_book user_participant_list }","bold":true}," ",{$user_participant_list_pdfvalue}],"hidden":"{$item_hide_integrated_edit_field9}"},
+			{"text":[{"text":"{$jslabel t_meeting_book user_participant_list }","bold":true}," ",{$user_participant_list_pdfvalue}],"hidden":"{$item_hide_user_participant_list}"},
 				
 		  ],
   "border": [ false, false, false, false ],
@@ -674,8 +674,10 @@ pdfDocument = {
 	
 			"stack": [
 		
-				'',
-	  ],
+				
+			{"text":[{"text":"{$jslabel t_meeting_book meet_approve }","bold":true}," ",{$meet_approve_pdfvalue}],"hidden":"{$item_hide_meet_approve}"},
+				
+		  ],
   "border": [ false, false, false, false ],
               "alignment": 'left',
      

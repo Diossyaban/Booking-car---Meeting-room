@@ -153,13 +153,13 @@ $tdatam_disposition[".isUseAjaxSuggest"] = true;
 
 
 
-																											
+																																																																																																
 
 $tdatam_disposition[".ajaxCodeSnippetAdded"] = false;
 
 $tdatam_disposition[".buttonsAdded"] = false;
 
-$tdatam_disposition[".addPageEvents"] = false;
+$tdatam_disposition[".addPageEvents"] = true;
 
 // use timepicker for search panel
 $tdatam_disposition[".isUseTimeForSearch"] = false;
@@ -1473,18 +1473,18 @@ $tdatam_disposition[".hideMobileList"] = array();
 
 // Begin Lookup settings
 				$edata["LookupType"] = 2;
-	$edata["LookupTable"] = "m_status";
+	$edata["LookupTable"] = "disposisiview";
 			$edata["autoCompleteFieldsOnEdit"] = 0;
 	$edata["autoCompleteFields"] = array();
 		$edata["LCType"] = 0;
 
 	
 		
-	$edata["LinkField"] = "m_status_id";
+	$edata["LinkField"] = "stat_id";
 	$edata["LinkFieldType"] = 0;
-	$edata["DisplayField"] = "status";
+	$edata["DisplayField"] = "stat";
 
-				$edata["LookupWhere"] = "m_status_desc in ('meetingbook', 'carbook')and status != 'Registration'";
+				$edata["LookupWhere"] = "m_status_desc in ( 'carbook')and status != 'Registration'";
 
 
 	
@@ -1764,6 +1764,24 @@ $masterTablesData["m_disposition"] = array();
 	$masterTablesData["m_disposition"][1]["masterKeys"][]="t_booking_id";
 				$masterTablesData["m_disposition"][1]["detailKeys"] = array();
 	$masterTablesData["m_disposition"][1]["detailKeys"][]="t_disposition_no";
+		
+	//endif
+	
+	//if !@t.bReportCrossTab
+			$strOriginalDetailsTable="t_booking";
+	$masterParams = array();
+	$masterParams["mDataSourceTable"]="t_booking_view1";
+	$masterParams["mOriginalTable"]= $strOriginalDetailsTable;
+	$masterParams["mShortTable"]= "t_booking_view1";
+	$masterParams["masterKeys"]= array();
+	$masterParams["detailKeys"]= array();
+
+	$masterParams["type"] = PAGE_LIST;
+					$masterTablesData["m_disposition"][2] = $masterParams;
+				$masterTablesData["m_disposition"][2]["masterKeys"] = array();
+	$masterTablesData["m_disposition"][2]["masterKeys"][]="t_booking_id";
+				$masterTablesData["m_disposition"][2]["detailKeys"] = array();
+	$masterTablesData["m_disposition"][2]["detailKeys"][]="t_disposition_no";
 		
 	//endif
 // -----------------end  prepare master-details data arrays ------------------------------//

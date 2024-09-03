@@ -217,8 +217,6 @@ function checkTableName($shortTName )
 		return true;
 	if ("m_status" == $shortTName )
 		return true;
-	if ("view" == $shortTName )
-		return true;
 	if ("tsun_noti" == $shortTName )
 		return true;
 	if ("m_employee" == $shortTName )
@@ -250,6 +248,18 @@ function checkTableName($shortTName )
 	if ("m_employee4" == $shortTName )
 		return true;
 	if ("m_meeting_room" == $shortTName )
+		return true;
+	if ("m_announcement" == $shortTName )
+		return true;
+	if ("t_meeting_book_view" == $shortTName )
+		return true;
+	if ("t_booking_view1" == $shortTName )
+		return true;
+	if ("t_meeting_book_view1" == $shortTName )
+		return true;
+	if ("disposisiview" == $shortTName )
+		return true;
+	if ("m_meeting_room1" == $shortTName )
 		return true;
 	return false;
 }
@@ -363,15 +373,6 @@ function GetTablesList($pdfMode = false)
 	}
 	if( $tableAvailable ) {
 		$arr[]="m_status";
-	}
-	$tableAvailable = true;
-	if( $checkPermissions ) {
-		$strPerm = GetUserPermissions("View");
-		$tableAvailable = ( strpos($strPerm, "P") !== false
-			|| $pdfMode && strpos($strPerm, "S") !== false );
-	}
-	if( $tableAvailable ) {
-		$arr[]="View";
 	}
 	$tableAvailable = true;
 	if( $checkPermissions ) {
@@ -517,6 +518,60 @@ function GetTablesList($pdfMode = false)
 	if( $tableAvailable ) {
 		$arr[]="m_meeting_room";
 	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("m_announcement");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="m_announcement";
+	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("t_meeting_book_view");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="t_meeting_book_view";
+	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("t_booking_view1");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="t_booking_view1";
+	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("t_meeting_book_view1");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="t_meeting_book_view1";
+	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("disposisiview");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="disposisiview";
+	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("m_meeting_room1");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="m_meeting_room1";
+	}
 	return $arr;
 }
 
@@ -533,7 +588,6 @@ function GetTablesListWithoutSecurity()
 	$arr[]="flow_disposisi";
 	$arr[]="m_disposition_type";
 	$arr[]="m_status";
-	$arr[]="View";
 	$arr[]="tsun_noti";
 	$arr[]="m_employee";
 	$arr[]="m_participant_type";
@@ -550,6 +604,12 @@ function GetTablesListWithoutSecurity()
 	$arr[]="m_employee3";
 	$arr[]="m_employee4";
 	$arr[]="m_meeting_room";
+	$arr[]="m_announcement";
+	$arr[]="t_meeting_book_view";
+	$arr[]="t_booking_view1";
+	$arr[]="t_meeting_book_view1";
+	$arr[]="disposisiview";
+	$arr[]="m_meeting_room1";
 	return $arr;
 }
 
@@ -1174,145 +1234,146 @@ function GetUserPermissionsStatic( $table )
 	if( $table=="t_booking" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_vehicle" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="t_meeting_book" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_disposition" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="flow_disposisi" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_disposition_type" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_status" )
 	{
 //	default permissions
-		// grant all by default
-		return "ADESPI".$extraPerm;
-	}
-	if( $table=="View" )
-	{
-//	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="tsun_noti" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_employee" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_participant_type" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_room_meeting" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="ListRoom" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="t_booking_view" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_disposition_view" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_login" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_login1" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_login2" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_login3" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_employee1" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_employee2" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_employee3" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_employee4" )
 	{
 //	default permissions
-		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="m_meeting_room" )
 	{
 //	default permissions
-		// grant all by default
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="m_announcement" )
+	{
+//	default permissions
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="t_meeting_book_view" )
+	{
+//	default permissions
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="t_booking_view1" )
+	{
+//	default permissions
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="t_meeting_book_view1" )
+	{
+//	default permissions
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="disposisiview" )
+	{
+//	default permissions
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="m_meeting_room1" )
+	{
+//	default permissions
 		return "ADESPI".$extraPerm;
 	}
 	// grant nothing by default

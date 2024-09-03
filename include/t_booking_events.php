@@ -221,7 +221,8 @@ else
 function BeforeAdd(&$values, &$message, $inline, $pageObject)
 {
 
-		
+		$values['flag'] = 0;
+
 if (toPHPTime($values["t_booking_from_date"]) > toPHPTime($values["t_booking_to_date"]))
 {
   $message = "Start date can not be later than End date.";
@@ -309,11 +310,12 @@ $data = array();
 $data["t_disposition_no"] = $values['t_booking_id'];
 $data["t_disposition_type"] = 6;
 $data["t_disposition_from"] = $userData = Security::getUserName();
-$data["t_disposition_from_date"] = $values['t_booking_from_date'];
+$data["t_disposition_from_date"] = date('Y-m-d H:i:s');
+$data["t_disposition_to_date"] = date('Y-m-d H:i:s');
 $data["t_disposition_to"] = $userData = Security::getUserName();
 $data["t_disposition_to_date"] = $values['t_booking_from_date'];
 $data["t_disposition_desc"] = "- New T-Booking Registraion -";
-$data["t_disposition_status"] = 29;
+$data["t_disposition_status"] = 35;
 DB::Insert("m_disposition", $data );
 
 

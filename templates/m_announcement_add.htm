@@ -1,0 +1,398 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	{BEGIN rtlCSS}
+	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+	{END rtlCSS}
+	{BEGIN styleCSSFiles}
+	<link REL="stylesheet" href="{$stylepath}" type="text/css">
+	{END styleCSSFiles}
+			
+	</head>
+
+	<body class="{$stylename} function-add" >
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		{$locking}
+		<div class="r-small-page" 
+			data-body-align="center"
+			data-body-width="standard"
+		>
+							{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c1" data-pageid="{$pageid}"	{$cell_top_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	 
+		<h2 data-itemtype="add_header" data-itemid="add_header" {$item_add_header} data-pageid="{$pageid}" >{$pagetitlelabel m_announcement add}</h2>
+	</div>					</div>
+	</div>		
+{END top_block}
+									{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	 
+		{BEGIN message_block}
+<div data-itemtype="add_message" data-itemid="add_message" {$item_add_message} data-pageid="{$pageid}" class="alert {$message_class}" role="alert">
+<h5>{$message}</h5>
+<div>
+{BEGIN message_back_button}
+		
+	<button class="btn btn-sm btn-default" {$backbutton_attrs}>Back to list</button>
+	{END message_back_button}
+{BEGIN view_page_button}
+	<button class="btn btn-sm btn-default" {$view_page_button_attrs}>View</button>
+{END view_page_button}
+{BEGIN edit_page_button}
+	<button class="btn btn-sm btn-default" {$edit_page_button_attrs}>Edit</button>
+{END edit_page_button}
+</div>
+</div>
+{END message_block}	</div>					</div>
+	</div>		
+{END above-grid_block}
+									{BEGIN grid_block}
+
+
+
+
+ 
+	 
+												<table 
+	data-body-align="center"
+	data-location="grid" id="form_grid_{$pageid}" data-makeup="small" {$form_grid} data-pageid="{$pageid}" 
+	class="r-edit-form" cellpadding="0" cellspacing="0" 
+	{$grid_hiddenattr} 
+		data-form-width="1"
+		
+		data-v-width="4"
+	>
+	<tbody>
+										<tr {$row_grid_0} >
+										
+
+{BEGIN cellblock_grid_c3}
+<td
+	{$cell_grid_c3}
+	class=" r-ori-vert"
+	
+				data-fullwidth
+		
+			data-cellId="grid_c3" data-pageid="{$pageid}"
+		data-v-cell="4"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN announcement_subject_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_announcement_subject}  r-vertical-field" 
+	data-signal-error-for="announcement_subject{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field" {$item_integrated_edit_field} data-pageid="{$pageid}" data-field="announcement_subject" data-fieldname="announcement_subject" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_announcement_subject}">
+		{BEGIN announcement_subject_label}{$label m_announcement announcement_subject }{END announcement_subject_label}
+	</label>
+	<div class="r-edit-field">
+		{$announcement_subject_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="announcement_subject">
+		<div class="text-muted" >
+		{$tooltip m_announcement announcement_subject }		</div>
+	</div>
+</div>
+
+
+{END announcement_subject_fieldblock}
+											
+{BEGIN announcement_desc_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_announcement_desc}  r-vertical-field" 
+	data-signal-error-for="announcement_desc{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field1" {$item_integrated_edit_field1} data-pageid="{$pageid}" data-field="announcement_desc" data-fieldname="announcement_desc" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_announcement_desc}">
+		{BEGIN announcement_desc_label}{$label m_announcement announcement_desc }{END announcement_desc_label}
+	</label>
+	<div class="r-edit-field">
+		{$announcement_desc_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="announcement_desc">
+		<div class="text-muted" >
+		{$tooltip m_announcement announcement_desc }		</div>
+	</div>
+</div>
+
+
+{END announcement_desc_fieldblock}
+											
+{BEGIN announcement_file_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_announcement_file}  r-vertical-field" 
+	data-signal-error-for="announcement_file{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field2" {$item_integrated_edit_field2} data-pageid="{$pageid}" data-field="announcement_file" data-fieldname="announcement_file" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_announcement_file}">
+		{BEGIN announcement_file_label}{$label m_announcement announcement_file }{END announcement_file_label}
+	</label>
+	<div class="r-edit-field">
+		{$announcement_file_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="announcement_file">
+		<div class="text-muted" >
+		{$tooltip m_announcement announcement_file }		</div>
+	</div>
+</div>
+
+
+{END announcement_file_fieldblock}
+											
+{BEGIN announcement_images_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_announcement_images}  r-vertical-field" 
+	data-signal-error-for="announcement_images{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" {$item_integrated_edit_field3} data-pageid="{$pageid}" data-field="announcement_images" data-fieldname="announcement_images" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_announcement_images}">
+		{BEGIN announcement_images_label}{$label m_announcement announcement_images }{END announcement_images_label}
+	</label>
+	<div class="r-edit-field">
+		{$announcement_images_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="announcement_images">
+		<div class="text-muted" >
+		{$tooltip m_announcement announcement_images }		</div>
+	</div>
+</div>
+
+
+{END announcement_images_fieldblock}
+											
+{BEGIN add_user_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_add_user}  r-vertical-field" 
+	data-signal-error-for="add_user{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="add_user" data-fieldname="add_user" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_add_user}">
+		{BEGIN add_user_label}{$label m_announcement add_user }{END add_user_label}
+	</label>
+	<div class="r-edit-field">
+		{$add_user_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="add_user">
+		<div class="text-muted" >
+		{$tooltip m_announcement add_user }		</div>
+	</div>
+</div>
+
+
+{END add_user_fieldblock}
+											
+{BEGIN add_date_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_add_date}  r-vertical-field" 
+	data-signal-error-for="add_date{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field5" {$item_integrated_edit_field5} data-pageid="{$pageid}" data-field="add_date" data-fieldname="add_date" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_add_date}">
+		{BEGIN add_date_label}{$label m_announcement add_date }{END add_date_label}
+	</label>
+	<div class="r-edit-field">
+		{$add_date_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="add_date">
+		<div class="text-muted" >
+		{$tooltip m_announcement add_date }		</div>
+	</div>
+</div>
+
+
+{END add_date_fieldblock}
+											
+{BEGIN edit_user_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_edit_user}  r-vertical-field" 
+	data-signal-error-for="edit_user{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field6" {$item_integrated_edit_field6} data-pageid="{$pageid}" data-field="edit_user" data-fieldname="edit_user" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_edit_user}">
+		{BEGIN edit_user_label}{$label m_announcement edit_user }{END edit_user_label}
+	</label>
+	<div class="r-edit-field">
+		{$edit_user_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="edit_user">
+		<div class="text-muted" >
+		{$tooltip m_announcement edit_user }		</div>
+	</div>
+</div>
+
+
+{END edit_user_fieldblock}
+											
+{BEGIN edit_date_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_edit_date}  r-vertical-field" 
+	data-signal-error-for="edit_date{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field7" {$item_integrated_edit_field7} data-pageid="{$pageid}" data-field="edit_date" data-fieldname="edit_date" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_edit_date}">
+		{BEGIN edit_date_label}{$label m_announcement edit_date }{END edit_date_label}
+	</label>
+	<div class="r-edit-field">
+		{$edit_date_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="edit_date">
+		<div class="text-muted" >
+		{$tooltip m_announcement edit_date }		</div>
+	</div>
+</div>
+
+
+{END edit_date_fieldblock}
+											
+{BEGIN announcement_star_periode_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_announcement_star_periode}  r-vertical-field" 
+	data-signal-error-for="announcement_star_periode{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field8" {$item_integrated_edit_field8} data-pageid="{$pageid}" data-field="announcement_star_periode" data-fieldname="announcement_star_periode" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_announcement_star_periode}">
+		{BEGIN announcement_star_periode_label}{$label m_announcement announcement_star_periode }{END announcement_star_periode_label}
+	</label>
+	<div class="r-edit-field">
+		{$announcement_star_periode_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="announcement_star_periode">
+		<div class="text-muted" >
+		{$tooltip m_announcement announcement_star_periode }		</div>
+	</div>
+</div>
+
+
+{END announcement_star_periode_fieldblock}
+											
+{BEGIN announcement_end_periode_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_announcement_end_periode}  r-vertical-field" 
+	data-signal-error-for="announcement_end_periode{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field9" {$item_integrated_edit_field9} data-pageid="{$pageid}" data-field="announcement_end_periode" data-fieldname="announcement_end_periode" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_announcement_end_periode}">
+		{BEGIN announcement_end_periode_label}{$label m_announcement announcement_end_periode }{END announcement_end_periode_label}
+	</label>
+	<div class="r-edit-field">
+		{$announcement_end_periode_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="announcement_end_periode">
+		<div class="text-muted" >
+		{$tooltip m_announcement announcement_end_periode }		</div>
+	</div>
+</div>
+
+
+{END announcement_end_periode_fieldblock}
+											
+{BEGIN announcement_active_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_announcement_active}  r-vertical-field" 
+	data-signal-error-for="announcement_active{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field10" {$item_integrated_edit_field10} data-pageid="{$pageid}" data-field="announcement_active" data-fieldname="announcement_active" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_announcement_active}">
+		{BEGIN announcement_active_label}{$label m_announcement announcement_active }{END announcement_active_label}
+	</label>
+	<div class="r-edit-field">
+		{$announcement_active_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="announcement_active">
+		<div class="text-muted" >
+		{$tooltip m_announcement announcement_active }		</div>
+	</div>
+</div>
+
+
+{END announcement_active_fieldblock}
+	
+								</td>
+			{END cellblock_grid_c3}
+								</tr>
+			</tbody></table>
+{END grid_block}
+									{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="below-grid_c1" data-pageid="{$pageid}"	{$cell_below-grid_c1}
+	class="			col-md-12
+	">
+	 
+		<span data-itemtype="add_save" data-itemid="add_save" {$item_add_save} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-primary   
+	" {$savebutton_attrs} >
+							Save			</a>
+</span>
+	 
+		<span data-itemtype="add_reset" data-itemid="add_reset" {$item_add_reset} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" id="resetButton{$id}" >
+							Reset			</a>
+</span>
+	 
+		{BEGIN back_button}
+<span data-itemtype="add_back_list" data-itemid="add_back_list" {$item_add_back_list} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" id="backButton{$id}" >
+							Back to list			</a>
+</span>
+{END back_button}
+	 
+		{BEGIN cancel_button}
+<span data-itemtype="add_cancel" data-itemid="add_cancel" {$item_add_cancel} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" id="cancelButton{$id}" >
+							Cancel			</a>
+</span>
+{END cancel_button}
+	</div>					</div>
+	</div>		
+{END below-grid_block}
+			</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

@@ -61,7 +61,7 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelst_booking["English"]["m_vehicle_id"] = "Vehicle";
 	$fieldToolTipst_booking["English"]["m_vehicle_id"] = "";
 	$placeHolderst_booking["English"]["m_vehicle_id"] = "";
-	$fieldLabelst_booking["English"]["t_booking_destination"] = "Destination";
+	$fieldLabelst_booking["English"]["t_booking_destination"] = "Address";
 	$fieldToolTipst_booking["English"]["t_booking_destination"] = "";
 	$placeHolderst_booking["English"]["t_booking_destination"] = "";
 	$fieldLabelst_booking["English"]["t_booking_remarks"] = "Remark";
@@ -79,6 +79,12 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelst_booking["English"]["m_vehicle_driver"] = "Driver";
 	$fieldToolTipst_booking["English"]["m_vehicle_driver"] = "";
 	$placeHolderst_booking["English"]["m_vehicle_driver"] = "";
+	$fieldLabelst_booking["English"]["Voucher"] = "Voucher";
+	$fieldToolTipst_booking["English"]["Voucher"] = "";
+	$placeHolderst_booking["English"]["Voucher"] = "";
+	$fieldLabelst_booking["English"]["flag"] = "Flag";
+	$fieldToolTipst_booking["English"]["flag"] = "";
+	$placeHolderst_booking["English"]["flag"] = "";
 	if (count($fieldToolTipst_booking["English"]))
 		$tdatat_booking[".isUseToolTips"] = true;
 }
@@ -176,7 +182,7 @@ $tdatat_booking[".isUseAjaxSuggest"] = true;
 
 
 
-									
+																								
 
 $tdatat_booking[".ajaxCodeSnippetAdded"] = false;
 
@@ -214,6 +220,8 @@ $tdatat_booking[".googleLikeFields"][] = "fr_date";
 $tdatat_booking[".googleLikeFields"][] = "to_dt";
 $tdatat_booking[".googleLikeFields"][] = "t_booking_user";
 $tdatat_booking[".googleLikeFields"][] = "m_vehicle_driver";
+$tdatat_booking[".googleLikeFields"][] = "Voucher";
+$tdatat_booking[".googleLikeFields"][] = "flag";
 
 
 
@@ -247,7 +255,7 @@ $tdatat_booking[".strOrderBy"] = $tstrOrderBy;
 $tdatat_booking[".orderindexes"] = array();
 
 
-$tdatat_booking[".sqlHead"] = "SELECT t_booking_id,  t_booking_no,  t_booking_from_date,  t_booking_to_date,  t_booking_from_time,  t_booking_to_time,  t_booking_destination,  t_booking_remarks,  add_user,  add_date,  edit_user,  edit_date,  t_booking_status,  m_vehicle_id,  DATE(t_booking_from_date) AS fr_date,  DATE(t_booking_to_date) AS to_dt,  t_booking_user,  m_vehicle_driver";
+$tdatat_booking[".sqlHead"] = "SELECT t_booking_id,  t_booking_no,  t_booking_from_date,  t_booking_to_date,  t_booking_from_time,  t_booking_to_time,  t_booking_destination,  t_booking_remarks,  add_user,  add_date,  edit_user,  edit_date,  t_booking_status,  m_vehicle_id,  DATE(t_booking_from_date) AS fr_date,  DATE(t_booking_to_date) AS to_dt,  t_booking_user,  m_vehicle_driver,  Voucher,  flag";
 $tdatat_booking[".sqlFrom"] = "FROM t_booking";
 $tdatat_booking[".sqlWhereExpr"] = "";
 $tdatat_booking[".sqlTail"] = "";
@@ -2619,7 +2627,7 @@ $tdatat_booking[".hideMobileList"] = array();
 //	Begin Edit Formats
 	$fdata["EditFormats"] = array();
 
-	$edata = array("EditFormat" => "Readonly");
+	$edata = array("EditFormat" => "Lookup wizard");
 
 	
 		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
@@ -2629,6 +2637,34 @@ $tdatat_booking[".hideMobileList"] = array();
 	
 	
 
+// Begin Lookup settings
+				$edata["LookupType"] = 2;
+	$edata["LookupTable"] = "m_login";
+			$edata["autoCompleteFieldsOnEdit"] = 0;
+	$edata["autoCompleteFields"] = array();
+		$edata["LCType"] = 0;
+
+	
+		
+	$edata["LinkField"] = "email";
+	$edata["LinkFieldType"] = 0;
+	$edata["DisplayField"] = "username";
+
+	
+
+	
+	$edata["LookupOrderBy"] = "fullname";
+
+	
+	
+	
+	
+
+	
+	
+		$edata["SelectSize"] = 1;
+
+// End Lookup Settings
 
 
 	
@@ -2835,6 +2871,279 @@ $tdatat_booking[".hideMobileList"] = array();
 
 	$tdatat_booking["m_vehicle_driver"] = $fdata;
 		$tdatat_booking[".searchableFields"][] = "m_vehicle_driver";
+//	Voucher
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 19;
+	$fdata["strName"] = "Voucher";
+	$fdata["GoodName"] = "Voucher";
+	$fdata["ownerTable"] = "t_booking";
+	$fdata["Label"] = GetFieldLabel("t_booking","Voucher");
+	$fdata["FieldType"] = 200;
+
+
+	
+	
+			
+
+		$fdata["strField"] = "Voucher";
+
+		$fdata["sourceSingle"] = "Voucher";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "Voucher";
+
+	
+	
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Text field");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+			$edata["HTML5InuptType"] = "text";
+
+		$edata["EditParams"] = "";
+			$edata["EditParams"].= " maxlength=50";
+
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+	
+	
+//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Contains";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+		$fdata["filterMultiSelect"] = 0;
+			$fdata["filterFormat"] = "Values list";
+		$fdata["showCollapsed"] = false;
+
+		$fdata["sortValueType"] = 0;
+		$fdata["numberOfVisibleItems"] = 10;
+
+		$fdata["filterBy"] = 0;
+
+	
+
+	
+	
+//end of Filters settings
+
+
+	$tdatat_booking["Voucher"] = $fdata;
+		$tdatat_booking[".searchableFields"][] = "Voucher";
+//	flag
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 20;
+	$fdata["strName"] = "flag";
+	$fdata["GoodName"] = "flag";
+	$fdata["ownerTable"] = "t_booking";
+	$fdata["Label"] = GetFieldLabel("t_booking","flag");
+	$fdata["FieldType"] = 3;
+
+
+	
+	
+			
+
+		$fdata["strField"] = "flag";
+
+		$fdata["sourceSingle"] = "flag";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "flag";
+
+	
+	
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Readonly");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+							
+	
+//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Contains";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+		$fdata["filterMultiSelect"] = 0;
+			$fdata["filterFormat"] = "Values list";
+		$fdata["showCollapsed"] = false;
+
+		$fdata["sortValueType"] = 0;
+		$fdata["numberOfVisibleItems"] = 10;
+
+		$fdata["filterBy"] = 0;
+
+	
+
+	
+	
+//end of Filters settings
+
+
+	$tdatat_booking["flag"] = $fdata;
+		$tdatat_booking[".searchableFields"][] = "flag";
 
 
 $tables_data["t_booking"]=&$tdatat_booking;
@@ -2939,7 +3248,7 @@ function createSqlQuery_t_booking()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "t_booking_id,  t_booking_no,  t_booking_from_date,  t_booking_to_date,  t_booking_from_time,  t_booking_to_time,  t_booking_destination,  t_booking_remarks,  add_user,  add_date,  edit_user,  edit_date,  t_booking_status,  m_vehicle_id,  DATE(t_booking_from_date) AS fr_date,  DATE(t_booking_to_date) AS to_dt,  t_booking_user,  m_vehicle_driver";
+$proto0["m_strFieldList"] = "t_booking_id,  t_booking_no,  t_booking_from_date,  t_booking_to_date,  t_booking_from_time,  t_booking_to_time,  t_booking_destination,  t_booking_remarks,  add_user,  add_date,  edit_user,  edit_date,  t_booking_status,  m_vehicle_id,  DATE(t_booking_from_date) AS fr_date,  DATE(t_booking_to_date) AS to_dt,  t_booking_user,  m_vehicle_driver,  Voucher,  flag";
 $proto0["m_strFrom"] = "FROM t_booking";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "";
@@ -3241,53 +3550,83 @@ $proto42["m_alias"] = "";
 $obj = new SQLFieldListItem($proto42);
 
 $proto0["m_fieldlist"][]=$obj;
-$proto0["m_fromlist"] = array();
-												$proto44=array();
-$proto44["m_link"] = "SQLL_MAIN";
-			$proto45=array();
-$proto45["m_strName"] = "t_booking";
-$proto45["m_srcTableName"] = "t_booking";
-$proto45["m_columns"] = array();
-$proto45["m_columns"][] = "t_booking_id";
-$proto45["m_columns"][] = "t_booking_no";
-$proto45["m_columns"][] = "t_booking_from_date";
-$proto45["m_columns"][] = "t_booking_to_date";
-$proto45["m_columns"][] = "t_booking_from_time";
-$proto45["m_columns"][] = "t_booking_to_time";
-$proto45["m_columns"][] = "t_booking_destination";
-$proto45["m_columns"][] = "t_booking_remarks";
-$proto45["m_columns"][] = "add_user";
-$proto45["m_columns"][] = "add_date";
-$proto45["m_columns"][] = "edit_user";
-$proto45["m_columns"][] = "edit_date";
-$proto45["m_columns"][] = "t_booking_status";
-$proto45["m_columns"][] = "m_vehicle_id";
-$proto45["m_columns"][] = "t_booking_user";
-$proto45["m_columns"][] = "m_vehicle_driver";
-$proto45["m_columns"][] = "m_plat";
-$obj = new SQLTable($proto45);
+						$proto44=array();
+			$obj = new SQLField(array(
+	"m_strName" => "Voucher",
+	"m_strTable" => "t_booking",
+	"m_srcTableName" => "t_booking"
+));
 
-$proto44["m_table"] = $obj;
-$proto44["m_sql"] = "t_booking";
-$proto44["m_alias"] = "";
+$proto44["m_sql"] = "Voucher";
 $proto44["m_srcTableName"] = "t_booking";
-$proto46=array();
-$proto46["m_sql"] = "";
-$proto46["m_uniontype"] = "SQLL_UNKNOWN";
+$proto44["m_expr"]=$obj;
+$proto44["m_alias"] = "";
+$obj = new SQLFieldListItem($proto44);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto46=array();
+			$obj = new SQLField(array(
+	"m_strName" => "flag",
+	"m_strTable" => "t_booking",
+	"m_srcTableName" => "t_booking"
+));
+
+$proto46["m_sql"] = "flag";
+$proto46["m_srcTableName"] = "t_booking";
+$proto46["m_expr"]=$obj;
+$proto46["m_alias"] = "";
+$obj = new SQLFieldListItem($proto46);
+
+$proto0["m_fieldlist"][]=$obj;
+$proto0["m_fromlist"] = array();
+												$proto48=array();
+$proto48["m_link"] = "SQLL_MAIN";
+			$proto49=array();
+$proto49["m_strName"] = "t_booking";
+$proto49["m_srcTableName"] = "t_booking";
+$proto49["m_columns"] = array();
+$proto49["m_columns"][] = "t_booking_id";
+$proto49["m_columns"][] = "t_booking_no";
+$proto49["m_columns"][] = "t_booking_from_date";
+$proto49["m_columns"][] = "t_booking_to_date";
+$proto49["m_columns"][] = "t_booking_from_time";
+$proto49["m_columns"][] = "t_booking_to_time";
+$proto49["m_columns"][] = "t_booking_destination";
+$proto49["m_columns"][] = "t_booking_remarks";
+$proto49["m_columns"][] = "add_user";
+$proto49["m_columns"][] = "add_date";
+$proto49["m_columns"][] = "edit_user";
+$proto49["m_columns"][] = "edit_date";
+$proto49["m_columns"][] = "t_booking_status";
+$proto49["m_columns"][] = "m_vehicle_id";
+$proto49["m_columns"][] = "t_booking_user";
+$proto49["m_columns"][] = "m_vehicle_driver";
+$proto49["m_columns"][] = "m_plat";
+$proto49["m_columns"][] = "Voucher";
+$proto49["m_columns"][] = "flag";
+$obj = new SQLTable($proto49);
+
+$proto48["m_table"] = $obj;
+$proto48["m_sql"] = "t_booking";
+$proto48["m_alias"] = "";
+$proto48["m_srcTableName"] = "t_booking";
+$proto50=array();
+$proto50["m_sql"] = "";
+$proto50["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto46["m_column"]=$obj;
-$proto46["m_contained"] = array();
-$proto46["m_strCase"] = "";
-$proto46["m_havingmode"] = false;
-$proto46["m_inBrackets"] = false;
-$proto46["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto46);
+$proto50["m_column"]=$obj;
+$proto50["m_contained"] = array();
+$proto50["m_strCase"] = "";
+$proto50["m_havingmode"] = false;
+$proto50["m_inBrackets"] = false;
+$proto50["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto50);
 
-$proto44["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto44);
+$proto48["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto48);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
@@ -3303,7 +3642,7 @@ $queryData_t_booking = createSqlQuery_t_booking();
 	
 																																																												;
 
-																		
+																				
 
 $tdatat_booking[".sqlquery"] = $queryData_t_booking;
 

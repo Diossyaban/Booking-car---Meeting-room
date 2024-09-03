@@ -266,6 +266,12 @@ class ConnectionManager_Base
 		$connectionsIds["m_employee3"] = "u736239518tsundbat154412412";
 		$connectionsIds["m_employee4"] = "u736239518tsundbat154412412";
 		$connectionsIds["m_meeting_room"] = "u736239518tsundbat154412412";
+		$connectionsIds["m_announcement"] = "u736239518tsundbat154412412";
+		$connectionsIds["t_meeting_book_view"] = "u736239518tsundbat154412412";
+		$connectionsIds["t_booking_view1"] = "u736239518tsundbat154412412";
+		$connectionsIds["t_meeting_book_view1"] = "u736239518tsundbat154412412";
+		$connectionsIds["disposisiview"] = "u736239518tsundbat154412412";
+		$connectionsIds["m_meeting_room1"] = "u736239518tsundbat154412412";
 
 		$this->_tablesConnectionIds = &$connectionsIds;
 	}

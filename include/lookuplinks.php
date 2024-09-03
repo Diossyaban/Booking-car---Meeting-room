@@ -47,6 +47,13 @@ function InitLookupLinks()
 			$lookupTableLinks["m_vehicle"]["t_booking.m_vehicle_id"] = array();
 		}
 		$lookupTableLinks["m_vehicle"]["t_booking.m_vehicle_id"]["edit"] = array("table" => "t_booking", "field" => "m_vehicle_id", "page" => "edit");
+		if( !isset( $lookupTableLinks["m_login"] ) ) {
+			$lookupTableLinks["m_login"] = array();
+		}
+		if( !isset( $lookupTableLinks["m_login"]["t_booking.t_booking_user"] )) {
+			$lookupTableLinks["m_login"]["t_booking.t_booking_user"] = array();
+		}
+		$lookupTableLinks["m_login"]["t_booking.t_booking_user"]["edit"] = array("table" => "t_booking", "field" => "t_booking_user", "page" => "edit");
 		if( !isset( $lookupTableLinks["m_meeting_room"] ) ) {
 			$lookupTableLinks["m_meeting_room"] = array();
 		}
@@ -89,13 +96,13 @@ function InitLookupLinks()
 			$lookupTableLinks["flow_disposisi"]["m_disposition.t_disposition_to"] = array();
 		}
 		$lookupTableLinks["flow_disposisi"]["m_disposition.t_disposition_to"]["edit"] = array("table" => "m_disposition", "field" => "t_disposition_to", "page" => "edit");
-		if( !isset( $lookupTableLinks["m_status"] ) ) {
-			$lookupTableLinks["m_status"] = array();
+		if( !isset( $lookupTableLinks["disposisiview"] ) ) {
+			$lookupTableLinks["disposisiview"] = array();
 		}
-		if( !isset( $lookupTableLinks["m_status"]["m_disposition.t_disposition_status"] )) {
-			$lookupTableLinks["m_status"]["m_disposition.t_disposition_status"] = array();
+		if( !isset( $lookupTableLinks["disposisiview"]["m_disposition.t_disposition_status"] )) {
+			$lookupTableLinks["disposisiview"]["m_disposition.t_disposition_status"] = array();
 		}
-		$lookupTableLinks["m_status"]["m_disposition.t_disposition_status"]["edit"] = array("table" => "m_disposition", "field" => "t_disposition_status", "page" => "edit");
+		$lookupTableLinks["disposisiview"]["m_disposition.t_disposition_status"]["edit"] = array("table" => "m_disposition", "field" => "t_disposition_status", "page" => "edit");
 		if( !isset( $lookupTableLinks["m_status"] ) ) {
 			$lookupTableLinks["m_status"] = array();
 		}
@@ -124,6 +131,34 @@ function InitLookupLinks()
 			$lookupTableLinks["m_status"]["m_disposition_view.t_disposition_status"] = array();
 		}
 		$lookupTableLinks["m_status"]["m_disposition_view.t_disposition_status"]["edit"] = array("table" => "m_disposition_view", "field" => "t_disposition_status", "page" => "edit");
+		if( !isset( $lookupTableLinks["m_meeting_room"] ) ) {
+			$lookupTableLinks["m_meeting_room"] = array();
+		}
+		if( !isset( $lookupTableLinks["m_meeting_room"]["t_meeting_book_view.t_meeting_roomid"] )) {
+			$lookupTableLinks["m_meeting_room"]["t_meeting_book_view.t_meeting_roomid"] = array();
+		}
+		$lookupTableLinks["m_meeting_room"]["t_meeting_book_view.t_meeting_roomid"]["edit"] = array("table" => "t_meeting_book_view", "field" => "t_meeting_roomid", "page" => "edit");
+		if( !isset( $lookupTableLinks["m_vehicle"] ) ) {
+			$lookupTableLinks["m_vehicle"] = array();
+		}
+		if( !isset( $lookupTableLinks["m_vehicle"]["t_booking_view1.m_vehicle_id"] )) {
+			$lookupTableLinks["m_vehicle"]["t_booking_view1.m_vehicle_id"] = array();
+		}
+		$lookupTableLinks["m_vehicle"]["t_booking_view1.m_vehicle_id"]["edit"] = array("table" => "t_booking_view1", "field" => "m_vehicle_id", "page" => "edit");
+		if( !isset( $lookupTableLinks["m_login"] ) ) {
+			$lookupTableLinks["m_login"] = array();
+		}
+		if( !isset( $lookupTableLinks["m_login"]["t_booking_view1.t_booking_user"] )) {
+			$lookupTableLinks["m_login"]["t_booking_view1.t_booking_user"] = array();
+		}
+		$lookupTableLinks["m_login"]["t_booking_view1.t_booking_user"]["edit"] = array("table" => "t_booking_view1", "field" => "t_booking_user", "page" => "edit");
+		if( !isset( $lookupTableLinks["m_vehicle"] ) ) {
+			$lookupTableLinks["m_vehicle"] = array();
+		}
+		if( !isset( $lookupTableLinks["m_vehicle"]["t_booking_view1.m_vehicle_driver"] )) {
+			$lookupTableLinks["m_vehicle"]["t_booking_view1.m_vehicle_driver"] = array();
+		}
+		$lookupTableLinks["m_vehicle"]["t_booking_view1.m_vehicle_driver"]["edit"] = array("table" => "t_booking_view1", "field" => "m_vehicle_driver", "page" => "edit");
 }
 
 ?>

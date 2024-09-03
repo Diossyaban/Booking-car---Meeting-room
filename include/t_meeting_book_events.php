@@ -22,6 +22,9 @@
 
 		$this->events["BeforeAdd"]=true;
 
+		$this->events["BeforeProcessAdd"]=true;
+
+
 
 	}
 
@@ -226,10 +229,11 @@ $disposisi = $values['t_disposition_status'];
 $tglInput = $values['t_disposition_from_date'];
 $idDispo = $values['t_disposition_id'];
 $roomId = $values['t_meeting_roomid'];
+$meet = $values['meet_approve'];  
 $roomName = '';
 
 switch ($roomId) {
-    case 1:
+    case 6:
         $roomName = 'Lavender';
         break;
     case 2:
@@ -241,13 +245,13 @@ switch ($roomId) {
     case 4:
         $roomName = 'Edelweiss 1 & 2';
         break;
-    case 5:
+    case 7:
         $roomName = 'Lotus';
         break;
-    case 6:
+    case 5:
         $roomName = 'Lily';
         break;
-    case 7:
+    case 1:
         $roomName = 'Wijaya Kusuma';
         break;
     default:
@@ -255,41 +259,78 @@ switch ($roomId) {
         break;
 }
 
-$message = "You have a meeting invitation from " . $values["t_meeting_user"];
-$title = "[T-Meeting] " . $disposisi . " Meeting Notification " . $values["t_meeting_desc"];
-$icon = "fa-envelope";
-$url = "t_meeting_book_view.php?editid1=" . $values['t_meeting_id'];
-$expire = 1440; 
-$newWindow = false;
-$from = "no-reply@talisman.co.id";
-$subject = "[T-Meeting] Notification";
+if ($meet == 1) {
+    $message = "You have a meeting invitation from " . $values["t_meeting_user"];
+    $title = "[T-Meeting] " . $disposisi . " Meeting Notification " . $values["t_meeting_desc"];
+    $icon = "fa-envelope";
+    $url = "t_meeting_book_view.php?editid1=" . $values['t_meeting_id'];
+    $expire = 1440;
+    $newWindow = false;
+    $from = "no-reply@talisman.co.id";
+    $subject = "[T-Meeting] Notification";
 
-$participants = explode(',', $values["user_participant_list"]);
+    $participants = explode(',', $values["user_participant_list"]);
 
-foreach ($participants as $participant) {
-    $participant = trim($participant); 
+    foreach ($participants as $participant) {
+        $participant = trim($participant);
 
-    $permissions = str_replace('@talisman.co.id', '', $participant);
+        $permissions = str_replace('@talisman.co.id', '', $participant);
+        addNotification($message, $title, $icon, $url, $expire, $permissions, $newWindow);
+
+        $email = $participant;
+        $msg = "
+        Anda diundang untuk menghadiri pertemuan \n
+        Oleh            : " . $values['t_meeting_user'] . "\n
+        Perihal         : " . $values['t_meeting_desc'] . "\n
+        Jam Mulai       : " . $values['t_meeting_from_date'] . "\n
+        Jam Selesai     : " . $values['t_meeting_to_date'] . "\n
+        Ruangan         : " . $roomName . "\n
+        Jumlah Peserta  : " . $values['t_meeting_total_participant'] . "\n
+        Peserta         : " . $values['user_participant_list'] . "\n
+        \n
+        Catatan: Dimohon untuk menginformasikan kepada resepsionis jika anda telah selesai menggunakan ruang meeting tersebut.\n
+        \n
+        Terima kasih,\n
+        \n
+        no-reply@talisman.co.id
+        ";
+
+        $ret = runner_mail(array('to' => $email, 'cc' => $cc, 'subject' => $subject, 'body' => $msg, 'from' => $from));
+        if (!$ret["mailed"]) {
+            echo $ret["message"];
+        }
+    }
+} elseif ($meet == 0) {
+    $message = "You have Notification to approval booking Room Wijaya Kusuma from " . $values["t_meeting_user"];
+    $title = "[T-Meeting] " . $disposisi . " Meeting Notification " . $values["t_meeting_desc"];
+    $icon = "fa-envelope";
+    $url = "t_meeting_book_view1_list.php";
+    $expire = 1440;
+    $newWindow = false;
+    $from = "no-reply@talisman.co.id";
+    $subject = "[T-Meeting] Notification";
+    
+    // Notification for 'ichwaldi.dios'
+    $permissions = "ichwaldi.dios";
     addNotification($message, $title, $icon, $url, $expire, $permissions, $newWindow);
 
-    $email = $participant; 
-   $msg = "
-Anda diundang untuk menghadiri pertemuan \n
-Oleh            : " . $values['t_meeting_user'] . "\n
-Perihal         : " . $values['t_meeting_desc'] . "\n
-Jam Mulai       : " . $values['t_meeting_from_date'] . "\n
-Jam Selesai     : " . $values['t_meeting_to_date'] . "\n
-Ruangan         : " . $roomName . "\n
-Jumlah Peserta  : " . $values['t_meeting_total_participant'] . "\n
-Peserta         : " . $values['user_participant_list'] . "\n
-\n
-Catatan: Dimohon untuk menginformasikan kepada resepsionis jika anda telah selesai menggunakan ruang meeting tersebut.\n
-\n
-Terima kasih,\n
-\n
-no-reply@talisman.co.id
-";
-
+    $email = "ichwaldi.dios@talisman.co.id";
+    $msg = "
+    Anda memiliki permintaan persetujuan untuk memesan ruang Wijaya Kusuma \n
+    Pemohon         : " . $values['t_meeting_user'] . "\n
+    Perihal         : " . $values['t_meeting_desc'] . "\n
+    Waktu Mulai     : " . $values['t_meeting_from_date'] . "\n
+    Waktu Selesai   : " . $values['t_meeting_to_date'] . "\n
+    Ruangan         : " . $roomName . "\n
+    Jumlah Peserta  : " . $values['t_meeting_total_participant'] . "\n
+    Daftar Peserta  : " . $values['user_participant_list'] . "\n
+    \n
+    Catatan: Mohon informasikan kepada resepsionis apabila Anda telah selesai menggunakan ruang meeting tersebut.\n
+    \n
+    Terima kasih atas perhatian dan kerjasamanya.\n
+    \n
+    no-reply@talisman.co.id
+    ";
 
     $ret = runner_mail(array('to' => $email, 'cc' => $cc, 'subject' => $subject, 'body' => $msg, 'from' => $from));
     if (!$ret["mailed"]) {
@@ -488,12 +529,15 @@ function BeforeAdd(&$values, &$message, $inline, $pageObject)
 $room = $values['t_meeting_roomid'];
 $start_time = $values['t_meeting_from_date'];
 $end_time = $values['t_meeting_to_date'];
-
 $rs = DB::Query("SELECT * FROM m_meeting_room WHERE id = " . $room);
 $roomData = $rs->fetchAssoc();
+$values['meet_approve'] = 1;  
+
+if ($room == 1) {
+    $values['meet_approve'] = 0;  
+}
 
 if ($roomData) {
-    // Set room name based on the room ID
     $roomName = '';
     if ($room == 2) {
         $roomName = "Edelweiss 1";
@@ -521,7 +565,6 @@ if ($roomData) {
         return false;
     }
 
-    // Check for conflicts with Edelweiss rooms
     if ($room == 2 || $room == 3) {
         $rs = DB::Query("SELECT * FROM t_meeting_book WHERE t_meeting_roomid = 4 AND (t_meeting_from_date < '" . $end_time . "' AND t_meeting_to_date > '" . $start_time . "')");
         $conflictMeeting = $rs->fetchAssoc();
@@ -549,6 +592,145 @@ return true;
 ;
 } // function BeforeAdd
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+				// Add page: Before process
+function BeforeProcessAdd($pageObject)
+{
+
+		
+// Place event code here.
+// Use "Add Action" button to add code snippets.
+;
+} // function BeforeProcessAdd
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		

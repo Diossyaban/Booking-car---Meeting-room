@@ -1,7 +1,8 @@
 <?php
 			$optionsArray = array( 'pdf' => array( 'pdfView' => false ),
 'master' => array( 't_booking' => array( 'preview' => false ),
-'t_booking_view' => array( 'preview' => false ) ),
+'t_booking_view' => array( 'preview' => false ),
+'t_booking_view1' => array( 'preview' => false ) ),
 'fields' => array( 'gridFields' => array( 't_disposition_from',
 't_disposition_to',
 't_disposition_desc',

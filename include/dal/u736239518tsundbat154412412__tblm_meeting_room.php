@@ -11,6 +11,7 @@ $dalTablem_meeting_room["created_date"] = array("type"=>135,"varname"=>"created_
 $dalTablem_meeting_room["created_by"] = array("type"=>200,"varname"=>"created_by", "name" => "created_by", "autoInc" => "0");
 $dalTablem_meeting_room["last_update_by"] = array("type"=>3,"varname"=>"last_update_by", "name" => "last_update_by", "autoInc" => "0");
 $dalTablem_meeting_room["last_update_date"] = array("type"=>135,"varname"=>"last_update_date", "name" => "last_update_date", "autoInc" => "0");
+$dalTablem_meeting_room["capacity"] = array("type"=>3,"varname"=>"capacity", "name" => "capacity", "autoInc" => "0");
 $dalTablem_meeting_room["id"]["key"]=true;
 
 $dal_info["u736239518tsundbat154412412__tblm_meeting_room"] = &$dalTablem_meeting_room;

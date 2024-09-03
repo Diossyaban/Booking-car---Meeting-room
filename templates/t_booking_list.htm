@@ -388,24 +388,11 @@
 				<div class="row">
 			 
 				<div 
-	data-cellId="above-grid_c" data-pageid="{$pageid}"	{$cell_above-grid_c}
-	class="r-align-center r-ori-vert			col-md-12
+	data-cellId="above-grid_c3" data-pageid="{$pageid}"	{$cell_above-grid_c3}
+	class=" r-ori-vert			col-md-12
 	
 ">
 		{BEGIN firstAboveGridCell}
-		 
-		<span data-itemtype="snippet" data-itemid="snippet" {$item_snippet} data-pageid="{$pageid}" >
-{$event t_booking_snippet}
-</span>			{END firstAboveGridCell}	
-	</div>					</div>
-			 
-				<div class="row">
-			 
-				<div 
-	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
-	class="			col-md-6
-	
-">
 		 
 		{BEGIN add_link}
 <span data-itemtype="add" data-itemid="add" {$item_add} data-pageid="{$pageid}" data-small data-button-item>
@@ -414,7 +401,29 @@
 							Add new			</a>
 </span>
 {END add_link}
-	 
+			{END firstAboveGridCell}	
+	</div>					</div>
+			 
+				<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c" data-pageid="{$pageid}"	{$cell_above-grid_c}
+	class="r-align-center r-ori-vert			col-md-12
+	
+">
+		 
+		<span data-itemtype="snippet" data-itemid="snippet" {$item_snippet} data-pageid="{$pageid}" >
+{$event t_booking_snippet}
+</span>		</div>					</div>
+			 
+				<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
+	class=" r-ori-vert			col-md-6
+	
+">
+		 
 		{BEGIN deleteselected_link}
 <span data-itemtype="delete" data-itemid="delete" {$item_delete} data-pageid="{$pageid}" data-small data-button-item>
 	<a type="button" title="" class="btn btn-default   
@@ -487,29 +496,6 @@
 				 
 					<li class="container-fluid 
 										">
-									{BEGIN print_details}
-<div>
-	<label for="printDetailsToggler{$id}">
-		<input type="checkbox" id="printDetailsToggler{$id}">
-		Print details	</label>
-	<div  id="printdetailstables{$id}" style="display:none;">
-											{BEGIN print_details_m_disposition}
-			<div>
-				<label for="printDetailsm_disposition{$id}">
-					<input type="checkbox" value="m_disposition" id="printDetailsm_disposition{$id}" checked>
-					Disposition				</label>
-			</div>
-			{END print_details_m_disposition}
-						</div>
-</div>
-{END print_details}
-				 
-					</li>
-											<li class="divider" role="separator"></li>
-																				 
-				 
-					<li class="container-fluid 
-										">
 									<div>
 	<label for="printPerPage{$id}">
 					Records Per Page							
@@ -569,7 +555,7 @@
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="m_vehicle_driver"]:before {
 		content: "{$label t_booking m_vehicle_driver}";
 	}
-	}
+			}
 </style>
 <table data-location="grid" id="form_grid_{$pageid}" data-makeup="leftbar" {$form_grid} data-pageid="{$pageid}" class=" table table-striped table-bordered r-horizontal-grid  r-flexgrid rnr-b-grid rnr-gridtable"
 	cellpadding="0"

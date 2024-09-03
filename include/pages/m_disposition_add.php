@@ -1,6 +1,7 @@
 <?php
 			$optionsArray = array( 'master' => array( 't_booking' => array( 'preview' => false ),
-'t_booking_view' => array( 'preview' => false ) ),
+'t_booking_view' => array( 'preview' => false ),
+'t_booking_view1' => array( 'preview' => false ) ),
 'captcha' => array( 'captcha' => false ),
 'fields' => array( 'gridFields' => array( 't_disposition_to',
 't_disposition_desc',

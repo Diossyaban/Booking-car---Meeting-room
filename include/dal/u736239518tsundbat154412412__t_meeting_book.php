@@ -21,6 +21,7 @@ $dalTablet_meeting_book["add_user"] = array("type"=>200,"varname"=>"add_user", "
 $dalTablet_meeting_book["add_date"] = array("type"=>135,"varname"=>"add_date", "name" => "add_date", "autoInc" => "0");
 $dalTablet_meeting_book["edit_user"] = array("type"=>200,"varname"=>"edit_user", "name" => "edit_user", "autoInc" => "0");
 $dalTablet_meeting_book["edit_date"] = array("type"=>135,"varname"=>"edit_date", "name" => "edit_date", "autoInc" => "0");
+$dalTablet_meeting_book["meet_approve"] = array("type"=>3,"varname"=>"meet_approve", "name" => "meet_approve", "autoInc" => "0");
 $dalTablet_meeting_book["t_meeting_id"]["key"]=true;
 
 $dal_info["u736239518tsundbat154412412__t_meeting_book"] = &$dalTablet_meeting_book;

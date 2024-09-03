@@ -219,6 +219,9 @@ pdfDocument = {
 				
 			{"text":{$to_dt_pdfvalue},"hidden":"{$item_hide_integrated_search_field17}"},
 				
+				
+			{"text":{$Voucher_pdfvalue},"hidden":"{$item_hide_integrated_search_field18}"},
+				
 		  ],
   "border": [ false, false, false, false ],
               "alignment": 'left',

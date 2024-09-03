@@ -990,39 +990,71 @@ function CustomExpression($value, $data, $field, $ptype, $table="")
 		$table = $strTableName;
 				if($table=="m_disposition" && $field=="t_disposition_status")
 	{
-		if ($value == "Draft") {
-
-    $value="<span class='label label-default'>".$value."</span>"; 
+		switch ($value) {
+    case "35":
+        $value = "<span class='label label-default'>Draft</span>";
+        break;
+    case "36":
+        $value = "<span class='label label-default'>Follow Up</span>";
+        break;
+    case "37":
+        $value = "<span class='label label-default'>Approve</span>";
+        break;
+    case "38":
+        $value = "<span class='label label-default'>Decline</span>";
+        break;
+    case "39":
+        $value = "<span class='label label-default'>Cancelled</span>";
+        break;
+    case "40":
+        $value = "<span class='label label-default'>Proceed</span>";
+        break;
+    default:
+        // Handle cases where $value does not match any of the specified cases
+        $value = "<span class='label label-default'>Unknown</span>";
+        break;
 }
-else if ($value == "Approve") {  
-
-    $value="<span class='label label-default'>".$value."</span>"; 
+;
+		return $value;
+	}
+				if($table=="t_meeting_book_view1" && $field=="t_meeting_roomid")
+	{
+		if ($value == 1) {
+    $value = "Wijaya Kusuma";
+} elseif ($value == 2) {
+    $value = "Edelweis 1";
+} elseif ($value == 3) {
+    $value = "Edelweis 2";
+} elseif ($value == 4) {
+    $value = "Edelweis 1 & 2";
+} elseif ($value == 5) {
+    $value = "Lily";
+} elseif ($value == 6) {
+    $value = "Lavender";
+} elseif ($value == 7) {
+    $value = "Lotus";
+} elseif ($value == 8) {
+    $value = "Meeting Room";
+} elseif ($value == 9) {
+    $value = "Conference Room";
+} elseif ($value == 10) {
+    $value = "Meeting Testing Dios";
 }
-else
-if ($value == "Decline") {  
+;
+		return $value;
+	}
+				if($table=="t_meeting_book_view1" && $field=="meet_approve")
+	{
+		if ($value == 1) {
+    $value = "Approve";
+} elseif ($value == 0) {
+    $value = "Waiting for approval";
+} elseif ($value == 2) {
+    $value = "Declined";
+}  
 
-    $value="<span class='label label-default'>".$value."</span>"; 
-}
-else
-if ($value == "Follow Up") {  
-
-    $value="<span class='label label-default'>".$value."</span>"; 
-}
-else
-if ($value == "Assigning") {  
-
-    $value="<span class='label label-default'>".$value."</span>"; 
-}
-else
-if ($value == "Cancelled") {  
-
-    $value="<span class='label label-default'>".$value."</span>"; 
-}
-else
-if ($value == "Done") {  
-
-    $value="<span class='label label-default'>".$value."</span>"; 
-};
+  $value="<span class='label label-default'>".$value."</span>"; 
+;
 		return $value;
 	}
 	return $value;
@@ -1064,11 +1096,9 @@ function GetDefaultValue($field, $ptype, $table="")
 	{
 		return Draft;
 	}
-				if($table=="t_booking" && $field=="t_booking_user")
+				if($table=="t_booking" && $field=="flag")
 	{
-		return 
-$userData = Security::getUserName();
-;
+		return 0;
 	}
 				if($table=="t_meeting_book" && $field=="t_meeting_to_date")
 	{

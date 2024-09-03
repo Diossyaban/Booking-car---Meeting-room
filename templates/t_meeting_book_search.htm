@@ -511,6 +511,28 @@
 </div>
 
 {END t_meeting_recurring_flag_fieldblock}
+											
+{BEGIN meet_approve_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_meet_approve}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="meet_approve{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field19" {$item_integrated_search_field19} data-pageid="{$pageid}" data-field="meet_approve" data-fieldname="meet_approve" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_meet_approve}">
+		{$label t_meeting_book meet_approve }	</label>
+	<div class="r-search-option">
+		{$searchtype_meet_approve}
+	</div>
+	<div class="r-search-field">
+		{$meet_approve_editcontrol}	</div>
+	<div class="r-search-field">
+		{$meet_approve_editcontrol1}
+	</div>
+	
+</div>
+
+{END meet_approve_fieldblock}
 	
 								</td>
 			{END cellblock_grid_c1}

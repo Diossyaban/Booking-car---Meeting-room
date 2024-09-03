@@ -126,6 +126,9 @@ pdfDocument = {
 				
 			{"text":{$t_booking_to_date_pdfvalue},"hidden":"{$item_hide_import_field3}"},
 				
+				
+			{"text":{$Voucher_pdfvalue},"hidden":"{$item_hide_import_field4}"},
+				
 		  ],
   "border": [ false, false, false, false ],
               "alignment": 'left',

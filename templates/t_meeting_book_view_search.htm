@@ -1,0 +1,568 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	{BEGIN rtlCSS}
+	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+	{END rtlCSS}
+	{BEGIN styleCSSFiles}
+	<link REL="stylesheet" href="{$stylepath}" type="text/css">
+	{END styleCSSFiles}
+			
+	</head>
+
+	<body class="{$stylename} function-search" >
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		{$locking}
+		<div class="r-small-page" 
+			data-body-align="center"
+			data-body-width="standard"
+		>
+							{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}"
+		data-v-width="6"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c1" data-pageid="{$pageid}"	{$cell_top_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	 
+		<h2 data-itemtype="search_header" data-itemid="search_header" {$item_search_header} data-pageid="{$pageid}" >{$pagetitlelabel t_meeting_book_view search}</h2>
+	</div>					</div>
+	</div>		
+{END top_block}
+									{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}"
+		data-v-width="6"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	</div>					</div>
+	</div>		
+{END above-grid_block}
+									{BEGIN grid_block}
+
+
+
+
+ 
+	 
+												<table 
+	data-body-align="center"
+	data-location="grid" id="form_grid_{$pageid}" data-makeup="small" {$form_grid} data-pageid="{$pageid}" 
+	class="r-edit-form" cellpadding="0" cellspacing="0" 
+	{$grid_hiddenattr} 
+		data-form-width="1"
+		
+		data-v-width="6"
+	>
+	<tbody>
+										<tr {$row_grid_0} >
+										
+
+{BEGIN cellblock_grid_c3}
+<td
+	{$cell_grid_c3}
+	class=" r-ori-vert"
+	
+				data-fullwidth
+		
+			data-cellId="grid_c3" data-pageid="{$pageid}"
+		data-v-cell="6"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN t_meeting_id_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_id}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="t_meeting_id{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field" {$item_integrated_search_field} data-pageid="{$pageid}" data-field="t_meeting_id" data-fieldname="t_meeting_id" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_t_meeting_id}">
+		{$label t_meeting_book_view t_meeting_id }	</label>
+	<div class="r-search-option">
+		{$searchtype_t_meeting_id}
+	</div>
+	<div class="r-search-field">
+		{$t_meeting_id_editcontrol}	</div>
+	<div class="r-search-field">
+		{$t_meeting_id_editcontrol1}
+	</div>
+	
+</div>
+
+{END t_meeting_id_fieldblock}
+											
+{BEGIN t_meeting_roomid_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_roomid}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="t_meeting_roomid{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field1" {$item_integrated_search_field1} data-pageid="{$pageid}" data-field="t_meeting_roomid" data-fieldname="t_meeting_roomid" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_t_meeting_roomid}">
+		{$label t_meeting_book_view t_meeting_roomid }	</label>
+	<div class="r-search-option">
+		{$searchtype_t_meeting_roomid}
+	</div>
+	<div class="r-search-field">
+		{$t_meeting_roomid_editcontrol}	</div>
+	<div class="r-search-field">
+		{$t_meeting_roomid_editcontrol1}
+	</div>
+	
+</div>
+
+{END t_meeting_roomid_fieldblock}
+											
+{BEGIN t_meeting_no_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_no}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="t_meeting_no{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field2" {$item_integrated_search_field2} data-pageid="{$pageid}" data-field="t_meeting_no" data-fieldname="t_meeting_no" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_t_meeting_no}">
+		{$label t_meeting_book_view t_meeting_no }	</label>
+	<div class="r-search-option">
+		{$searchtype_t_meeting_no}
+	</div>
+	<div class="r-search-field">
+		{$t_meeting_no_editcontrol}	</div>
+	<div class="r-search-field">
+		{$t_meeting_no_editcontrol1}
+	</div>
+	
+</div>
+
+{END t_meeting_no_fieldblock}
+											
+{BEGIN t_meeting_user_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_user}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="t_meeting_user{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field3" {$item_integrated_search_field3} data-pageid="{$pageid}" data-field="t_meeting_user" data-fieldname="t_meeting_user" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_t_meeting_user}">
+		{$label t_meeting_book_view t_meeting_user }	</label>
+	<div class="r-search-option">
+		{$searchtype_t_meeting_user}
+	</div>
+	<div class="r-search-field">
+		{$t_meeting_user_editcontrol}	</div>
+	<div class="r-search-field">
+		{$t_meeting_user_editcontrol1}
+	</div>
+	
+</div>
+
+{END t_meeting_user_fieldblock}
+											
+{BEGIN t_meeting_desc_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_desc}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="t_meeting_desc{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field4" {$item_integrated_search_field4} data-pageid="{$pageid}" data-field="t_meeting_desc" data-fieldname="t_meeting_desc" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_t_meeting_desc}">
+		{$label t_meeting_book_view t_meeting_desc }	</label>
+	<div class="r-search-option">
+		{$searchtype_t_meeting_desc}
+	</div>
+	<div class="r-search-field">
+		{$t_meeting_desc_editcontrol}	</div>
+	<div class="r-search-field">
+		{$t_meeting_desc_editcontrol1}
+	</div>
+	
+</div>
+
+{END t_meeting_desc_fieldblock}
+											
+{BEGIN t_meeting_from_date_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_from_date}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="t_meeting_from_date{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field5" {$item_integrated_search_field5} data-pageid="{$pageid}" data-field="t_meeting_from_date" data-fieldname="t_meeting_from_date" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_t_meeting_from_date}">
+		{$label t_meeting_book_view t_meeting_from_date }	</label>
+	<div class="r-search-option">
+		{$searchtype_t_meeting_from_date}
+	</div>
+	<div class="r-search-field">
+		{$t_meeting_from_date_editcontrol}	</div>
+	<div class="r-search-field">
+		{$t_meeting_from_date_editcontrol1}
+	</div>
+	
+</div>
+
+{END t_meeting_from_date_fieldblock}
+											
+{BEGIN t_meeting_to_date_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_to_date}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="t_meeting_to_date{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field6" {$item_integrated_search_field6} data-pageid="{$pageid}" data-field="t_meeting_to_date" data-fieldname="t_meeting_to_date" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_t_meeting_to_date}">
+		{$label t_meeting_book_view t_meeting_to_date }	</label>
+	<div class="r-search-option">
+		{$searchtype_t_meeting_to_date}
+	</div>
+	<div class="r-search-field">
+		{$t_meeting_to_date_editcontrol}	</div>
+	<div class="r-search-field">
+		{$t_meeting_to_date_editcontrol1}
+	</div>
+	
+</div>
+
+{END t_meeting_to_date_fieldblock}
+											
+{BEGIN user_participant_list_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_user_participant_list}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="user_participant_list{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field9" {$item_integrated_search_field9} data-pageid="{$pageid}" data-field="user_participant_list" data-fieldname="user_participant_list" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_user_participant_list}">
+		{$label t_meeting_book_view user_participant_list }	</label>
+	<div class="r-search-option">
+		{$searchtype_user_participant_list}
+	</div>
+	<div class="r-search-field">
+		{$user_participant_list_editcontrol}	</div>
+	<div class="r-search-field">
+		{$user_participant_list_editcontrol1}
+	</div>
+	
+</div>
+
+{END user_participant_list_fieldblock}
+											
+{BEGIN t_meeting_participant_type_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_participant_type}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="t_meeting_participant_type{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field10" {$item_integrated_search_field10} data-pageid="{$pageid}" data-field="t_meeting_participant_type" data-fieldname="t_meeting_participant_type" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_t_meeting_participant_type}">
+		{$label t_meeting_book_view t_meeting_participant_type }	</label>
+	<div class="r-search-option">
+		{$searchtype_t_meeting_participant_type}
+	</div>
+	<div class="r-search-field">
+		{$t_meeting_participant_type_editcontrol}	</div>
+	<div class="r-search-field">
+		{$t_meeting_participant_type_editcontrol1}
+	</div>
+	
+</div>
+
+{END t_meeting_participant_type_fieldblock}
+											
+{BEGIN t_meeting_total_participant_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_total_participant}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="t_meeting_total_participant{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field11" {$item_integrated_search_field11} data-pageid="{$pageid}" data-field="t_meeting_total_participant" data-fieldname="t_meeting_total_participant" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_t_meeting_total_participant}">
+		{$label t_meeting_book_view t_meeting_total_participant }	</label>
+	<div class="r-search-option">
+		{$searchtype_t_meeting_total_participant}
+	</div>
+	<div class="r-search-field">
+		{$t_meeting_total_participant_editcontrol}	</div>
+	<div class="r-search-field">
+		{$t_meeting_total_participant_editcontrol1}
+	</div>
+	
+</div>
+
+{END t_meeting_total_participant_fieldblock}
+											
+{BEGIN t_meeting_isminuman_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_isminuman}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="t_meeting_isminuman{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field12" {$item_integrated_search_field12} data-pageid="{$pageid}" data-field="t_meeting_isminuman" data-fieldname="t_meeting_isminuman" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_t_meeting_isminuman}">
+		{$label t_meeting_book_view t_meeting_isminuman }	</label>
+	<div class="r-search-option">
+		{$searchtype_t_meeting_isminuman}
+	</div>
+	<div class="r-search-field">
+		{$t_meeting_isminuman_editcontrol}	</div>
+	<div class="r-search-field">
+		{$t_meeting_isminuman_editcontrol1}
+	</div>
+	
+</div>
+
+{END t_meeting_isminuman_fieldblock}
+											
+{BEGIN t_meeting_issnack_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_issnack}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="t_meeting_issnack{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field13" {$item_integrated_search_field13} data-pageid="{$pageid}" data-field="t_meeting_issnack" data-fieldname="t_meeting_issnack" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_t_meeting_issnack}">
+		{$label t_meeting_book_view t_meeting_issnack }	</label>
+	<div class="r-search-option">
+		{$searchtype_t_meeting_issnack}
+	</div>
+	<div class="r-search-field">
+		{$t_meeting_issnack_editcontrol}	</div>
+	<div class="r-search-field">
+		{$t_meeting_issnack_editcontrol1}
+	</div>
+	
+</div>
+
+{END t_meeting_issnack_fieldblock}
+											
+{BEGIN t_meeting_ismakan_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_ismakan}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="t_meeting_ismakan{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field14" {$item_integrated_search_field14} data-pageid="{$pageid}" data-field="t_meeting_ismakan" data-fieldname="t_meeting_ismakan" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_t_meeting_ismakan}">
+		{$label t_meeting_book_view t_meeting_ismakan }	</label>
+	<div class="r-search-option">
+		{$searchtype_t_meeting_ismakan}
+	</div>
+	<div class="r-search-field">
+		{$t_meeting_ismakan_editcontrol}	</div>
+	<div class="r-search-field">
+		{$t_meeting_ismakan_editcontrol1}
+	</div>
+	
+</div>
+
+{END t_meeting_ismakan_fieldblock}
+											
+{BEGIN t_meeting_recurring_flag_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_recurring_flag}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="t_meeting_recurring_flag{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field15" {$item_integrated_search_field15} data-pageid="{$pageid}" data-field="t_meeting_recurring_flag" data-fieldname="t_meeting_recurring_flag" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_t_meeting_recurring_flag}">
+		{$label t_meeting_book_view t_meeting_recurring_flag }	</label>
+	<div class="r-search-option">
+		{$searchtype_t_meeting_recurring_flag}
+	</div>
+	<div class="r-search-field">
+		{$t_meeting_recurring_flag_editcontrol}	</div>
+	<div class="r-search-field">
+		{$t_meeting_recurring_flag_editcontrol1}
+	</div>
+	
+</div>
+
+{END t_meeting_recurring_flag_fieldblock}
+											
+{BEGIN t_meeting_status_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_status}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="t_meeting_status{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field16" {$item_integrated_search_field16} data-pageid="{$pageid}" data-field="t_meeting_status" data-fieldname="t_meeting_status" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_t_meeting_status}">
+		{$label t_meeting_book_view t_meeting_status }	</label>
+	<div class="r-search-option">
+		{$searchtype_t_meeting_status}
+	</div>
+	<div class="r-search-field">
+		{$t_meeting_status_editcontrol}	</div>
+	<div class="r-search-field">
+		{$t_meeting_status_editcontrol1}
+	</div>
+	
+</div>
+
+{END t_meeting_status_fieldblock}
+											
+{BEGIN fr_date_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_fr_date}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="fr_date{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field7" {$item_integrated_search_field7} data-pageid="{$pageid}" data-field="fr_date" data-fieldname="fr_date" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_fr_date}">
+		{$label t_meeting_book_view fr_date }	</label>
+	<div class="r-search-option">
+		{$searchtype_fr_date}
+	</div>
+	<div class="r-search-field">
+		{$fr_date_editcontrol}	</div>
+	<div class="r-search-field">
+		{$fr_date_editcontrol1}
+	</div>
+	
+</div>
+
+{END fr_date_fieldblock}
+											
+{BEGIN to_dt_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_to_dt}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="to_dt{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field8" {$item_integrated_search_field8} data-pageid="{$pageid}" data-field="to_dt" data-fieldname="to_dt" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_to_dt}">
+		{$label t_meeting_book_view to_dt }	</label>
+	<div class="r-search-option">
+		{$searchtype_to_dt}
+	</div>
+	<div class="r-search-field">
+		{$to_dt_editcontrol}	</div>
+	<div class="r-search-field">
+		{$to_dt_editcontrol1}
+	</div>
+	
+</div>
+
+{END to_dt_fieldblock}
+											
+{BEGIN fr_time_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_fr_time}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="fr_time{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field17" {$item_integrated_search_field17} data-pageid="{$pageid}" data-field="fr_time" data-fieldname="fr_time" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_fr_time}">
+		{$label t_meeting_book_view fr_time }	</label>
+	<div class="r-search-option">
+		{$searchtype_fr_time}
+	</div>
+	<div class="r-search-field">
+		{$fr_time_editcontrol}	</div>
+	<div class="r-search-field">
+		{$fr_time_editcontrol1}
+	</div>
+	
+</div>
+
+{END fr_time_fieldblock}
+											
+{BEGIN to_time_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_to_time}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="to_time{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field18" {$item_integrated_search_field18} data-pageid="{$pageid}" data-field="to_time" data-fieldname="to_time" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_to_time}">
+		{$label t_meeting_book_view to_time }	</label>
+	<div class="r-search-option">
+		{$searchtype_to_time}
+	</div>
+	<div class="r-search-field">
+		{$to_time_editcontrol}	</div>
+	<div class="r-search-field">
+		{$to_time_editcontrol1}
+	</div>
+	
+</div>
+
+{END to_time_fieldblock}
+	
+								</td>
+			{END cellblock_grid_c3}
+								</tr>
+			</tbody></table>
+{END grid_block}
+									{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}"
+		data-v-width="6"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="below-grid_c1" data-pageid="{$pageid}"	{$cell_below-grid_c1}
+	class="			col-md-12
+	">
+	 
+		<span data-itemtype="search_search" data-itemid="search_search" {$item_search_search} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-primary   
+	" {$searchbutton_attrs} >
+							Search			</a>
+</span>
+	 
+		<span data-itemtype="search_reset" data-itemid="search_reset" {$item_search_reset} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$resetbutton_attrs} >
+							Reset			</a>
+</span>
+	 
+		{BEGIN back_button}
+<span data-itemtype="search_back_list" data-itemid="search_back_list" {$item_search_back_list} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$backbutton_attrs} >
+							Back to list			</a>
+</span>
+{END back_button}
+	 
+		{BEGIN cancel_button}
+<span data-itemtype="search_cancel" data-itemid="search_cancel" {$item_search_cancel} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" id="cancelButton{$id}" >
+							Cancel			</a>
+</span>
+{END cancel_button}
+	</div>					</div>
+	</div>		
+{END below-grid_block}
+			</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

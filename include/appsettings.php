@@ -611,11 +611,11 @@ $ajaxSearchStartsWith = true;
 
 
 
-$globalSettings["LandingPageType"] = 1;
-$globalSettings["LandingTable"] = "t_meeting_book";
-$globalSettings["LandingPage"] = "list";
-$globalSettings["LandingURL"] = "t_meeting_book_list.php?page=list";
-$globalSettings["LandingPageId"] = "list";
+$globalSettings["LandingPageType"] = 0;
+$globalSettings["LandingTable"] = "View";
+$globalSettings["LandingPage"] = "dashboard";
+$globalSettings["LandingURL"] = "view_dashboard.php?page=dashboard";
+$globalSettings["LandingPageId"] = "dashboard";
 
 $globalSettings["ProjectLogo"] = array();
 $globalSettings["ProjectLogo"]["English"] = "TBooking";
@@ -628,7 +628,7 @@ $globalSettings["htmlEmailTemplates"] = array();
 
 
 $globalSettings["createLoginPage"] = true;
-$globalSettings["userGroupCount"] = 0;
+$globalSettings["userGroupCount"] = 1;
 
 
 $globalSettings["apiGoogleMapsCode"] = "";
@@ -741,9 +741,9 @@ $suggestAllContent = true;
 $strLastSQL = "";
 $showCustomMarkerOnPrint = false;
 
-$projectBuildKey = "631_1724732487";
+$projectBuildKey = "864_1725020569";
 $wizardBuildKey = "39558";
-$projectBuildNumber = "631";
+$projectBuildNumber = "864";
 
 $mlang_messages = array();
 $mlang_charsets = array();
@@ -789,7 +789,12 @@ $tableCaptions["English"]["m_employee2"] = "M Employee2";
 $tableCaptions["English"]["m_employee3"] = "M Employee3";
 $tableCaptions["English"]["m_employee4"] = "M Employee4";
 $tableCaptions["English"]["m_meeting_room"] = "M Meeting Room";
-$tableCaptions["English"]["View"] = "View";
+$tableCaptions["English"]["m_announcement"] = "M Announcement";
+$tableCaptions["English"]["t_meeting_book_view"] = "T Meeting Book View";
+$tableCaptions["English"]["t_booking_view1"] = "T Booking View1";
+$tableCaptions["English"]["t_meeting_book_view1"] = "T Meeting Book View1";
+$tableCaptions["English"]["disposisiview"] = "Disposisiview";
+$tableCaptions["English"]["m_meeting_room1"] = "M Meeting Room1";
 
 
 $globalEvents = new class_GlobalEvents;

@@ -44,23 +44,26 @@ switch ($_SESSION['option_calendar']) {
 
 
     case 'meeting':
-        $sql = "SELECT 
-                    a.t_meeting_id id, 
-                    a.t_meeting_user name, 
-                    a.t_meeting_roomid room_id, 
-                    b.m_meeting_room_name resource, 
-                    a.t_meeting_desc description, 
-                    a.t_meeting_from_date start_date, 
-                    a.t_meeting_to_date end_date, 
-                    'green' color
-                FROM 
-                    t_meeting_book a
-                INNER JOIN 
-                    m_meeting_room b ON b.id = a.t_meeting_roomid
-                WHERE 
-                    a.t_meeting_from_date >= '$start' 
-                    AND a.t_meeting_to_date < '$end'";
-        break;
+    $sql = "SELECT 
+                a.t_meeting_id id, 
+                a.t_meeting_user name, 
+                a.t_meeting_roomid room_id, 
+                b.m_meeting_room_name resource, 
+                a.t_meeting_desc description, 
+                a.t_meeting_from_date start_date, 
+                a.t_meeting_to_date end_date, 
+                a.meet_approve approve,            
+                'green' color
+            FROM 
+                t_meeting_book a
+            INNER JOIN 
+                m_meeting_room b ON b.id = a.t_meeting_roomid
+            WHERE 
+                a.t_meeting_from_date >= '$start' 
+                AND a.t_meeting_to_date < '$end'
+                AND a.meet_approve = 1";
+    break;
+
                           
 
 }

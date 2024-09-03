@@ -3524,8 +3524,6 @@ function fillProjectEntites()
 	$projectEntitiesReverse[ "m_disposition_type" ] = "m_disposition_type";
 	$projectEntities[ "m_status" ] = array( "url" => "m_status", "type" => 0 );
 	$projectEntitiesReverse[ "m_status" ] = "m_status";
-	$projectEntities[ "View" ] = array( "url" => "view", "type" => 4 );
-	$projectEntitiesReverse[ "view" ] = "View";
 	$projectEntities[ "tsun_noti" ] = array( "url" => "tsun_noti", "type" => 0 );
 	$projectEntitiesReverse[ "tsun_noti" ] = "tsun_noti";
 	$projectEntities[ "m_employee" ] = array( "url" => "m_employee", "type" => 1 );
@@ -3558,6 +3556,18 @@ function fillProjectEntites()
 	$projectEntitiesReverse[ "m_employee4" ] = "m_employee4";
 	$projectEntities[ "m_meeting_room" ] = array( "url" => "m_meeting_room", "type" => 0 );
 	$projectEntitiesReverse[ "m_meeting_room" ] = "m_meeting_room";
+	$projectEntities[ "m_announcement" ] = array( "url" => "m_announcement", "type" => 0 );
+	$projectEntitiesReverse[ "m_announcement" ] = "m_announcement";
+	$projectEntities[ "t_meeting_book_view" ] = array( "url" => "t_meeting_book_view", "type" => 1 );
+	$projectEntitiesReverse[ "t_meeting_book_view" ] = "t_meeting_book_view";
+	$projectEntities[ "t_booking_view1" ] = array( "url" => "t_booking_view1", "type" => 1 );
+	$projectEntitiesReverse[ "t_booking_view1" ] = "t_booking_view1";
+	$projectEntities[ "t_meeting_book_view1" ] = array( "url" => "t_meeting_book_view1", "type" => 1 );
+	$projectEntitiesReverse[ "t_meeting_book_view1" ] = "t_meeting_book_view1";
+	$projectEntities[ "disposisiview" ] = array( "url" => "disposisiview", "type" => 6 );
+	$projectEntitiesReverse[ "disposisiview" ] = "disposisiview";
+	$projectEntities[ "m_meeting_room1" ] = array( "url" => "m_meeting_room1", "type" => 1 );
+	$projectEntitiesReverse[ "m_meeting_room1" ] = "m_meeting_room1";
 }
 
 function findTable( $table ) {

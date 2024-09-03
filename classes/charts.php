@@ -392,8 +392,6 @@ class Chart
 			return true;
 		if("m_status" == $this->chrt_array['tables'][0])
 			return true;
-		if("" == $this->chrt_array['tables'][0])
-			return true;
 		if("tsun_noti" == $this->chrt_array['tables'][0])
 			return true;
 		if("m_employee" == $this->chrt_array['tables'][0])
@@ -423,6 +421,18 @@ class Chart
 		if("m_employee" == $this->chrt_array['tables'][0])
 			return true;
 		if("m_employee" == $this->chrt_array['tables'][0])
+			return true;
+		if("m_meeting_room" == $this->chrt_array['tables'][0])
+			return true;
+		if("m_announcement" == $this->chrt_array['tables'][0])
+			return true;
+		if("t_meeting_book" == $this->chrt_array['tables'][0])
+			return true;
+		if("t_booking" == $this->chrt_array['tables'][0])
+			return true;
+		if("t_meeting_book" == $this->chrt_array['tables'][0])
+			return true;
+		if("" == $this->chrt_array['tables'][0])
 			return true;
 		if("m_meeting_room" == $this->chrt_array['tables'][0])
 			return true;

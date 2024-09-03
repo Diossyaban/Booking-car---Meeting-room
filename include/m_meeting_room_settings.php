@@ -6,11 +6,11 @@ $tdatam_meeting_room[".OwnerID"] = "";
 $tdatam_meeting_room[".OriginalTable"] = "m_meeting_room";
 
 
-$tdatam_meeting_room[".pagesByType"] = my_json_decode( "{}" );
+$tdatam_meeting_room[".pagesByType"] = my_json_decode( "{\"search\":[\"search\"]}" );
 $tdatam_meeting_room[".originalPagesByType"] = $tdatam_meeting_room[".pagesByType"];
-$tdatam_meeting_room[".pages"] = types2pages( my_json_decode( "{}" ) );
+$tdatam_meeting_room[".pages"] = types2pages( my_json_decode( "{\"search\":[\"search\"]}" ) );
 $tdatam_meeting_room[".originalPages"] = $tdatam_meeting_room[".pages"];
-$tdatam_meeting_room[".defaultPages"] = my_json_decode( "{}" );
+$tdatam_meeting_room[".defaultPages"] = my_json_decode( "{\"search\":\"search\"}" );
 $tdatam_meeting_room[".originalDefaultPages"] = $tdatam_meeting_room[".defaultPages"];
 
 //	field labels
@@ -58,6 +58,9 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelsm_meeting_room["English"]["last_update_date"] = "Last Update Date";
 	$fieldToolTipsm_meeting_room["English"]["last_update_date"] = "";
 	$placeHoldersm_meeting_room["English"]["last_update_date"] = "";
+	$fieldLabelsm_meeting_room["English"]["capacity"] = "Capacity";
+	$fieldToolTipsm_meeting_room["English"]["capacity"] = "";
+	$placeHoldersm_meeting_room["English"]["capacity"] = "";
 	if (count($fieldToolTipsm_meeting_room["English"]))
 		$tdatam_meeting_room[".isUseToolTips"] = true;
 }
@@ -155,7 +158,7 @@ $tdatam_meeting_room[".isUseAjaxSuggest"] = true;
 
 
 
-									
+																								
 
 $tdatam_meeting_room[".ajaxCodeSnippetAdded"] = false;
 
@@ -186,6 +189,7 @@ $tdatam_meeting_room[".googleLikeFields"][] = "created_date";
 $tdatam_meeting_room[".googleLikeFields"][] = "created_by";
 $tdatam_meeting_room[".googleLikeFields"][] = "last_update_by";
 $tdatam_meeting_room[".googleLikeFields"][] = "last_update_date";
+$tdatam_meeting_room[".googleLikeFields"][] = "capacity";
 
 
 
@@ -219,11 +223,22 @@ $tdatam_meeting_room[".strOrderBy"] = $tstrOrderBy;
 $tdatam_meeting_room[".orderindexes"] = array();
 
 
-$tdatam_meeting_room[".sqlHead"] = "SELECT id,  	m_meeting_room_name,  	m_meeting_room_location_id,  	m_meeting_room_isactive,  	is_active,  	is_delete,  	deleted_date,  	created_date,  	created_by,  	last_update_by,  	last_update_date";
+$tdatam_meeting_room[".sqlHead"] = "SELECT id,  	m_meeting_room_name,  	m_meeting_room_location_id,  	m_meeting_room_isactive,  	is_active,  	is_delete,  	deleted_date,  	created_date,  	created_by,  	last_update_by,  	last_update_date,  	capacity";
 $tdatam_meeting_room[".sqlFrom"] = "FROM m_meeting_room";
 $tdatam_meeting_room[".sqlWhereExpr"] = "";
 $tdatam_meeting_room[".sqlTail"] = "";
 
+//fill array of tabs for list page
+$arrGridTabs = array();
+$arrGridTabs[] = array(
+	'tabId' => "",
+	'name' => "All data",
+	'nameType' => 'Text',
+	'where' => "",
+	'showRowCount' => 0,
+	'hideEmpty' => 0,
+);
+$tdatam_meeting_room[".arrGridTabs"] = $arrGridTabs;
 
 
 
@@ -1788,6 +1803,144 @@ $tdatam_meeting_room[".hideMobileList"] = array();
 
 	$tdatam_meeting_room["last_update_date"] = $fdata;
 		$tdatam_meeting_room[".searchableFields"][] = "last_update_date";
+//	capacity
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 12;
+	$fdata["strName"] = "capacity";
+	$fdata["GoodName"] = "capacity";
+	$fdata["ownerTable"] = "m_meeting_room";
+	$fdata["Label"] = GetFieldLabel("m_meeting_room","capacity");
+	$fdata["FieldType"] = 3;
+
+
+	
+	
+			
+
+		$fdata["strField"] = "capacity";
+
+		$fdata["sourceSingle"] = "capacity";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "capacity";
+
+	
+	
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Text field");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+			$edata["HTML5InuptType"] = "text";
+
+		$edata["EditParams"] = "";
+		
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Number");
+							
+	
+//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Contains";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+		$fdata["filterMultiSelect"] = 0;
+			$fdata["filterFormat"] = "Values list";
+		$fdata["showCollapsed"] = false;
+
+		$fdata["sortValueType"] = 0;
+		$fdata["numberOfVisibleItems"] = 10;
+
+		$fdata["filterBy"] = 0;
+
+	
+
+	
+	
+//end of Filters settings
+
+
+	$tdatam_meeting_room["capacity"] = $fdata;
+		$tdatam_meeting_room[".searchableFields"][] = "capacity";
 
 
 $tables_data["m_meeting_room"]=&$tdatam_meeting_room;
@@ -1832,7 +1985,7 @@ function createSqlQuery_m_meeting_room()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "id,  	m_meeting_room_name,  	m_meeting_room_location_id,  	m_meeting_room_isactive,  	is_active,  	is_delete,  	deleted_date,  	created_date,  	created_by,  	last_update_by,  	last_update_date";
+$proto0["m_strFieldList"] = "id,  	m_meeting_room_name,  	m_meeting_room_location_id,  	m_meeting_room_isactive,  	is_active,  	is_delete,  	deleted_date,  	created_date,  	created_by,  	last_update_by,  	last_update_date,  	capacity";
 $proto0["m_strFrom"] = "FROM m_meeting_room";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "";
@@ -2026,47 +2179,62 @@ $proto26["m_alias"] = "";
 $obj = new SQLFieldListItem($proto26);
 
 $proto0["m_fieldlist"][]=$obj;
-$proto0["m_fromlist"] = array();
-												$proto28=array();
-$proto28["m_link"] = "SQLL_MAIN";
-			$proto29=array();
-$proto29["m_strName"] = "m_meeting_room";
-$proto29["m_srcTableName"] = "m_meeting_room";
-$proto29["m_columns"] = array();
-$proto29["m_columns"][] = "id";
-$proto29["m_columns"][] = "m_meeting_room_name";
-$proto29["m_columns"][] = "m_meeting_room_location_id";
-$proto29["m_columns"][] = "m_meeting_room_isactive";
-$proto29["m_columns"][] = "is_active";
-$proto29["m_columns"][] = "is_delete";
-$proto29["m_columns"][] = "deleted_date";
-$proto29["m_columns"][] = "created_date";
-$proto29["m_columns"][] = "created_by";
-$proto29["m_columns"][] = "last_update_by";
-$proto29["m_columns"][] = "last_update_date";
-$obj = new SQLTable($proto29);
+						$proto28=array();
+			$obj = new SQLField(array(
+	"m_strName" => "capacity",
+	"m_strTable" => "m_meeting_room",
+	"m_srcTableName" => "m_meeting_room"
+));
 
-$proto28["m_table"] = $obj;
-$proto28["m_sql"] = "m_meeting_room";
-$proto28["m_alias"] = "";
+$proto28["m_sql"] = "capacity";
 $proto28["m_srcTableName"] = "m_meeting_room";
-$proto30=array();
-$proto30["m_sql"] = "";
-$proto30["m_uniontype"] = "SQLL_UNKNOWN";
+$proto28["m_expr"]=$obj;
+$proto28["m_alias"] = "";
+$obj = new SQLFieldListItem($proto28);
+
+$proto0["m_fieldlist"][]=$obj;
+$proto0["m_fromlist"] = array();
+												$proto30=array();
+$proto30["m_link"] = "SQLL_MAIN";
+			$proto31=array();
+$proto31["m_strName"] = "m_meeting_room";
+$proto31["m_srcTableName"] = "m_meeting_room";
+$proto31["m_columns"] = array();
+$proto31["m_columns"][] = "id";
+$proto31["m_columns"][] = "m_meeting_room_name";
+$proto31["m_columns"][] = "m_meeting_room_location_id";
+$proto31["m_columns"][] = "m_meeting_room_isactive";
+$proto31["m_columns"][] = "is_active";
+$proto31["m_columns"][] = "is_delete";
+$proto31["m_columns"][] = "deleted_date";
+$proto31["m_columns"][] = "created_date";
+$proto31["m_columns"][] = "created_by";
+$proto31["m_columns"][] = "last_update_by";
+$proto31["m_columns"][] = "last_update_date";
+$proto31["m_columns"][] = "capacity";
+$obj = new SQLTable($proto31);
+
+$proto30["m_table"] = $obj;
+$proto30["m_sql"] = "m_meeting_room";
+$proto30["m_alias"] = "";
+$proto30["m_srcTableName"] = "m_meeting_room";
+$proto32=array();
+$proto32["m_sql"] = "";
+$proto32["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto30["m_column"]=$obj;
-$proto30["m_contained"] = array();
-$proto30["m_strCase"] = "";
-$proto30["m_havingmode"] = false;
-$proto30["m_inBrackets"] = false;
-$proto30["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto30);
+$proto32["m_column"]=$obj;
+$proto32["m_contained"] = array();
+$proto32["m_strCase"] = "";
+$proto32["m_havingmode"] = false;
+$proto32["m_inBrackets"] = false;
+$proto32["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto32);
 
-$proto28["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto28);
+$proto30["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto30);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
@@ -2082,7 +2250,7 @@ $queryData_m_meeting_room = createSqlQuery_m_meeting_room();
 	
 																																																												;
 
-											
+												
 
 $tdatam_meeting_room[".sqlquery"] = $queryData_m_meeting_room;
 

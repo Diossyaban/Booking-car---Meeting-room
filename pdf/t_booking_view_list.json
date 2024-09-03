@@ -91,6 +91,12 @@ pdfDocument = {
 										{BEGIN col_grid_8}
 					"%",
 					{END col_grid_8}
+										{BEGIN col_grid_9}
+					"%",
+					{END col_grid_9}
+										{BEGIN col_grid_10}
+					"%",
+					{END col_grid_10}
 															],
 											heights: [ // first height for header part
 					"%",
@@ -188,6 +194,50 @@ pdfDocument = {
 			{"text":"","hidden":"{$item_hide_print_panel}"},
 				
 		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'right',
+     
+      
+      },
+
+											],
+						[
+																{
+	cellId: 'c3',
+	col:0,
+	row:0,
+			
+		
+	//	static colspan/rowspan
+		
+			
+	
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+																							{
+	cellId: 'c4',
+	col:0,
+	row:0,
+			
+		
+	//	static colspan/rowspan
+		
+			
+	
+	
+			"text": [
+		
+				'',
+	  ],
   "border": [ false, false, false, false ],
               "alignment": 'right',
      
@@ -427,6 +477,9 @@ pdfDocument = {
 				
 			{"text":"{$jslabel t_booking_view t_booking_from_date }","hidden":"{$item_hide_grid_field_label}","bold":true},
 				
+				
+			{"text":"to date","hidden":"{$item_hide_text1}","isHtml":true},
+				
 		  ],
   "border": [ true, true, true, true ],
               "alignment": '{$t_booking_from_date_align}',
@@ -440,7 +493,7 @@ pdfDocument = {
 	cellId: 'headcell_field4',
 	col:0,
 	row:0,
-			fieldName: 't_booking_to_date',
+			fieldName: 'fr_date',
 				style: 'headcell',
 		
 		
@@ -454,16 +507,71 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel t_booking_view t_booking_to_date }","hidden":"{$item_hide_grid_field_label1}","bold":true},
+			{"text":"{$jslabel t_booking_view fr_date }","hidden":"{$item_hide_grid_field_label1}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
-              "alignment": '{$t_booking_to_date_align}',
+              "alignment": '{$fr_date_align}',
      
       
       },
 
 {END cellblock_grid_headcell_field4}
+																							{BEGIN cellblock_grid_headcell_field6}
+{
+	cellId: 'headcell_field6',
+	col:0,
+	row:0,
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field6}
+																							{BEGIN cellblock_grid_headcell_field7}
+{
+	cellId: 'headcell_field7',
+	col:0,
+	row:0,
+			fieldName: 't_booking_user',
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel t_booking_view t_booking_user }","hidden":"{$item_hide_grid_field_label2}","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$t_booking_user_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field7}
 											],
 				{END row_grid_0}
 		
@@ -684,35 +792,6 @@ pdfDocument = {
 	cellId: 'cell_field',
 	col:0,
 	row:0,
-			fieldName: 't_booking_from_date',
-				style: 'bodycell',
-		
-		
-	//	dynamic colspan/rowspan
-
-		
-						
-	
-	
-	
-			"text": [
-		
-				
-			{"text":{$t_booking_from_date_pdfvalue},"hidden":"{$item_hide_grid_field}"},
-				
-		  ],
-  "border": [ true, true, true, true ],
-              "alignment": '{$t_booking_from_date_align}',
-     
-      
-      },
-
-{END cellblock_grid_cell_field}
-																							{BEGIN cellblock_grid_cell_field4}
-{
-	cellId: 'cell_field4',
-	col:0,
-	row:0,
 			fieldName: 't_booking_to_date',
 				style: 'bodycell',
 		
@@ -729,6 +808,12 @@ pdfDocument = {
 				
 			{"text":{$t_booking_to_date_pdfvalue},"hidden":"{$item_hide_grid_field1}"},
 				
+				
+			{"text":"-","hidden":"{$item_hide_text}","isHtml":true},
+				
+				
+			{"text":{$t_booking_from_date_pdfvalue},"hidden":"{$item_hide_grid_field}"},
+				
 		  ],
   "border": [ true, true, true, true ],
               "alignment": '{$t_booking_to_date_align}',
@@ -736,7 +821,91 @@ pdfDocument = {
       
       },
 
+{END cellblock_grid_cell_field}
+																							{BEGIN cellblock_grid_cell_field4}
+{
+	cellId: 'cell_field4',
+	col:0,
+	row:0,
+			fieldName: 'fr_date',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				
+			{"text":{$fr_date_pdfvalue},"hidden":"{$item_hide_grid_field2}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$fr_date_align}',
+     
+      
+      },
+
 {END cellblock_grid_cell_field4}
+																							{BEGIN cellblock_grid_cell_field6}
+{
+	cellId: 'cell_field6',
+	col:0,
+	row:0,
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_cell_field6}
+																							{BEGIN cellblock_grid_cell_field7}
+{
+	cellId: 'cell_field7',
+	col:0,
+	row:0,
+			fieldName: 't_booking_user',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				
+			{"text":{$t_booking_user_pdfvalue},"hidden":"{$item_hide_grid_field3}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$t_booking_user_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field7}
 											],
 				{END row_grid_1}
 						{BEGIN row_grid_2}
@@ -820,6 +989,18 @@ pdfDocument = {
 				cellId: 'cell_dpreview',
 				row:  0,
 				col:  8,
+				text: ''
+			},
+														{ 
+				cellId: 'cell_dpreview',
+				row:  0,
+				col:  9,
+				text: ''
+			},
+														{ 
+				cellId: 'cell_dpreview',
+				row:  0,
+				col:  10,
 				text: ''
 			},
 							],
@@ -1065,6 +1246,58 @@ pdfDocument = {
       },
 
 {END cellblock_grid_footcell_field4}
+																							{BEGIN cellblock_grid_footcell_field6}
+{
+	cellId: 'footcell_field6',
+	col:0,
+	row:0,
+				style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_footcell_field6}
+																							{BEGIN cellblock_grid_footcell_field7}
+{
+	cellId: 'footcell_field7',
+	col:0,
+	row:0,
+				style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_footcell_field7}
 											],
 				{END row_grid_3}
 		

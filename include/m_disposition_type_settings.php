@@ -128,13 +128,13 @@ $tdatam_disposition_type[".isUseAjaxSuggest"] = true;
 
 
 
-									
+																								
 
 $tdatam_disposition_type[".ajaxCodeSnippetAdded"] = false;
 
 $tdatam_disposition_type[".buttonsAdded"] = false;
 
-$tdatam_disposition_type[".addPageEvents"] = false;
+$tdatam_disposition_type[".addPageEvents"] = true;
 
 // use timepicker for search panel
 $tdatam_disposition_type[".isUseTimeForSearch"] = false;
@@ -716,6 +716,7 @@ $tdatam_disposition_type[".sqlquery"] = $queryData_m_disposition_type;
 
 
 
-$tdatam_disposition_type[".hasEvents"] = false;
+include_once(getabspath("include/m_disposition_type_events.php"));
+$tdatam_disposition_type[".hasEvents"] = true;
 
 ?>

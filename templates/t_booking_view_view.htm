@@ -29,8 +29,8 @@
 		>
 							{BEGIN top_block}
 <div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}"
-		data-v-width="2"
-	data-v-margin="0"
+		data-v-width="4"
+	data-v-margin="1"
 	
 >		
 	 
@@ -47,8 +47,8 @@
 {END top_block}
 									{BEGIN above-grid_block}
 <div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}"
-		data-v-width="2"
-	data-v-margin="0"
+		data-v-width="4"
+	data-v-margin="1"
 	
 >		
 	 
@@ -78,7 +78,7 @@
 		>
 		  <h4 class="panel-title">
 		  				<a role="button" >
-				New Section			</a>
+				Details			</a>
 					  </h4>
 		</div>
 		<div  class="panel-collapse collapse in {$section_section1_xtrclass}" role="tabpanel"  {$section_section1_attrs}
@@ -98,7 +98,7 @@
 	data-location="section" id="form_section_{$pageid}" data-makeup="small" {$form_section} data-pageid="{$pageid}" 
 	class="r-edit-form" cellpadding="0" cellspacing="0" 
 	{$grid_hiddenattr} 
-		data-form-width="1"
+		data-form-width="2"
 		
 		data-v-width="4"
 	>
@@ -112,51 +112,9 @@
 	class=" r-ori-vert"
 	
 			data-single
-				data-fullwidth
-		
+			
 			data-cellId="section_c1" data-pageid="{$pageid}"
-		data-v-cell="4"
-		
->
-	<div edit-form-cell class="clearfix">
-				
-{BEGIN t_booking_id_fieldblock}
-
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_t_booking_id}  r-vertical-field" data-fieldname="t_booking_id" data-signal-error-for="t_booking_id{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field" {$item_integrated_edit_field} data-pageid="{$pageid}" data-field="t_booking_id" data-fieldname="t_booking_id" >
-
-	
-	<label class="col-md-offset-3 col-md-6" for="{$labelfor_t_booking_id}">
-		
-		{BEGIN t_booking_id_label}{$label t_booking_view t_booking_id }{END t_booking_id_label}
-	</label>
-	<div class="col-md-offset-3 col-md-6" >
-		{$t_booking_id_value}	</div>
-
-		
-</div>
-
-
-{END t_booking_id_fieldblock}
-	
-								</td>
-			{END cellblock_section_c1}
-								</tr>
-	 
-	 
-														<tr {$row_section_1} >
-										
-
-{BEGIN cellblock_section_c5}
-<td
-	{$cell_section_c5}
-	class=" r-ori-vert"
-	
-			data-single
-				data-fullwidth
-		
-			data-cellId="section_c5" data-pageid="{$pageid}"
-		data-v-cell="4"
+		data-v-cell="2"
 		
 >
 	<div edit-form-cell class="clearfix">
@@ -166,14 +124,16 @@
 
 <div class="r-integrated-field form-group clearfix {$fielddispclass_t_booking_destination}  r-vertical-field" data-fieldname="t_booking_destination" data-signal-error-for="t_booking_destination{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field6" {$item_integrated_edit_field6} data-pageid="{$pageid}" data-field="t_booking_destination" data-fieldname="t_booking_destination" >
 
+		<div class="col-md-12">
 	
-	<label class="col-md-offset-3 col-md-6" for="{$labelfor_t_booking_destination}">
+	<label class="" for="{$labelfor_t_booking_destination}">
 		
 		{BEGIN t_booking_destination_label}{$label t_booking_view t_booking_destination }{END t_booking_destination_label}
 	</label>
-	<div class="col-md-offset-3 col-md-6" >
+	<div class="" >
 		{$t_booking_destination_value}	</div>
 
+		</div>
 		
 </div>
 
@@ -181,7 +141,64 @@
 {END t_booking_destination_fieldblock}
 	
 								</td>
+			{END cellblock_section_c1}
+			 
+		
+							
+
+{BEGIN cellblock_section_c8}
+<td
+	{$cell_section_c8}
+	class=" r-ori-vert"
+	
+			data-single
+			
+			data-cellId="section_c8" data-pageid="{$pageid}"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+									</td>
+			{END cellblock_section_c8}
+								</tr>
+	 
+	 
+		
+						<tr>
+						
+
+{BEGIN cellblock_section_c5}
+<td
+	{$cell_section_c5}
+	class=" r-ori-vert"
+	
+			data-single
+			
+			data-cellId="section_c5" data-pageid="{$pageid}"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+									</td>
 			{END cellblock_section_c5}
+			 
+		
+							
+
+{BEGIN cellblock_section_c9}
+<td
+	{$cell_section_c9}
+	class=" r-ori-vert"
+	
+			data-single
+			
+			data-cellId="section_c9" data-pageid="{$pageid}"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+									</td>
+			{END cellblock_section_c9}
 								</tr>
 	 
 	 
@@ -194,10 +211,9 @@
 	class=" r-ori-vert"
 	
 			data-single
-				data-fullwidth
-		
+			
 			data-cellId="section_c4" data-pageid="{$pageid}"
-		data-v-cell="4"
+		data-v-cell="2"
 		
 >
 	<div edit-form-cell class="clearfix">
@@ -207,14 +223,16 @@
 
 <div class="r-integrated-field form-group clearfix {$fielddispclass_t_booking_remarks}  r-vertical-field" data-fieldname="t_booking_remarks" data-signal-error-for="t_booking_remarks{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field7" {$item_integrated_edit_field7} data-pageid="{$pageid}" data-field="t_booking_remarks" data-fieldname="t_booking_remarks" >
 
+		<div class="col-md-12">
 	
-	<label class="col-md-offset-3 col-md-6" for="{$labelfor_t_booking_remarks}">
+	<label class="" for="{$labelfor_t_booking_remarks}">
 		
 		{BEGIN t_booking_remarks_label}{$label t_booking_view t_booking_remarks }{END t_booking_remarks_label}
 	</label>
-	<div class="col-md-offset-3 col-md-6" >
+	<div class="" >
 		{$t_booking_remarks_value}	</div>
 
+		</div>
 		
 </div>
 
@@ -223,6 +241,24 @@
 	
 								</td>
 			{END cellblock_section_c4}
+			 
+		
+							
+
+{BEGIN cellblock_section_c10}
+<td
+	{$cell_section_c10}
+	class=" r-ori-vert"
+	
+			data-single
+			
+			data-cellId="section_c10" data-pageid="{$pageid}"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+									</td>
+			{END cellblock_section_c10}
 								</tr>
 	 
 	 
@@ -234,28 +270,108 @@
 	{$cell_section_c3}
 	class=" r-ori-vert"
 	
-			data-single
-				data-fullwidth
-		
+			
 			data-cellId="section_c3" data-pageid="{$pageid}"
-		data-v-cell="4"
+		data-v-cell="2"
 		
 >
 	<div edit-form-cell class="clearfix">
 				
+{BEGIN t_booking_from_date_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_booking_from_date}  r-vertical-field" data-fieldname="t_booking_from_date" data-signal-error-for="t_booking_from_date{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field2" {$item_integrated_edit_field2} data-pageid="{$pageid}" data-field="t_booking_from_date" data-fieldname="t_booking_from_date" >
+
+		<div class="col-md-12">
+	
+	<label class="" for="{$labelfor_t_booking_from_date}">
+		
+		{BEGIN t_booking_from_date_label}{$label t_booking_view t_booking_from_date }{END t_booking_from_date_label}
+	</label>
+	<div class="" >
+		{$t_booking_from_date_value}	</div>
+
+		</div>
+		
+</div>
+
+
+{END t_booking_from_date_fieldblock}
+											
+{BEGIN t_booking_to_date_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_booking_to_date}  r-vertical-field" data-fieldname="t_booking_to_date" data-signal-error-for="t_booking_to_date{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" {$item_integrated_edit_field3} data-pageid="{$pageid}" data-field="t_booking_to_date" data-fieldname="t_booking_to_date" >
+
+		<div class="col-md-12">
+	
+	<label class="" for="{$labelfor_t_booking_to_date}">
+		
+		{BEGIN t_booking_to_date_label}{$label t_booking_view t_booking_to_date }{END t_booking_to_date_label}
+	</label>
+	<div class="" >
+		{$t_booking_to_date_value}	</div>
+
+		</div>
+		
+</div>
+
+
+{END t_booking_to_date_fieldblock}
+	
+								</td>
+			{END cellblock_section_c3}
+			 
+																
+
+{BEGIN cellblock_section_c11}
+<td
+	{$cell_section_c11}
+	class=" r-ori-vert"
+	
+			
+			data-cellId="section_c11" data-pageid="{$pageid}"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN m_vehicle_driver_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_m_vehicle_driver}  r-vertical-field" data-fieldname="m_vehicle_driver" data-signal-error-for="m_vehicle_driver{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field1" {$item_integrated_edit_field1} data-pageid="{$pageid}" data-field="m_vehicle_driver" data-fieldname="m_vehicle_driver" >
+
+		<div class="col-md-12">
+	
+	<label class="" for="{$labelfor_m_vehicle_driver}">
+		
+		{BEGIN m_vehicle_driver_label}{$label t_booking_view m_vehicle_driver }{END m_vehicle_driver_label}
+	</label>
+	<div class="" >
+		{$m_vehicle_driver_value}	</div>
+
+		</div>
+		
+</div>
+
+
+{END m_vehicle_driver_fieldblock}
+											
 {BEGIN m_vehicle_id_fieldblock}
 
 
 <div class="r-integrated-field form-group clearfix {$fielddispclass_m_vehicle_id}  r-vertical-field" data-fieldname="m_vehicle_id" data-signal-error-for="m_vehicle_id{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field13" {$item_integrated_edit_field13} data-pageid="{$pageid}" data-field="m_vehicle_id" data-fieldname="m_vehicle_id" >
 
+		<div class="col-md-12">
 	
-	<label class="col-md-offset-3 col-md-6" for="{$labelfor_m_vehicle_id}">
+	<label class="" for="{$labelfor_m_vehicle_id}">
 		
 		{BEGIN m_vehicle_id_label}{$label t_booking_view m_vehicle_id }{END m_vehicle_id_label}
 	</label>
-	<div class="col-md-offset-3 col-md-6" >
+	<div class="" >
 		{$m_vehicle_id_value}	</div>
 
+		</div>
 		
 </div>
 
@@ -263,7 +379,7 @@
 {END m_vehicle_id_fieldblock}
 	
 								</td>
-			{END cellblock_section_c3}
+			{END cellblock_section_c11}
 								</tr>
 	 
 	 
@@ -276,40 +392,203 @@
 	class=" r-ori-vert"
 	
 			data-single
-				data-fullwidth
-		
+			
 			data-cellId="section_c2" data-pageid="{$pageid}"
-		data-v-cell="4"
+		data-v-cell="2"
 		
 >
 	<div edit-form-cell class="clearfix">
 				
-{BEGIN m_vehicle_driver_fieldblock}
+{BEGIN fr_date_fieldblock}
 
 
-<div class="r-integrated-field form-group clearfix {$fielddispclass_m_vehicle_driver}  r-vertical-field" data-fieldname="m_vehicle_driver" data-signal-error-for="m_vehicle_driver{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field1" {$item_integrated_edit_field1} data-pageid="{$pageid}" data-field="m_vehicle_driver" data-fieldname="m_vehicle_driver" >
+<div class="r-integrated-field form-group clearfix {$fielddispclass_fr_date}  r-vertical-field" data-fieldname="fr_date" data-signal-error-for="fr_date{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="fr_date" data-fieldname="fr_date" >
 
+		<div class="col-md-12">
 	
-	<label class="col-md-offset-3 col-md-6" for="{$labelfor_m_vehicle_driver}">
+	<label class="" for="{$labelfor_fr_date}">
 		
-		{BEGIN m_vehicle_driver_label}{$label t_booking_view m_vehicle_driver }{END m_vehicle_driver_label}
+		{BEGIN fr_date_label}{$label t_booking_view fr_date }{END fr_date_label}
 	</label>
-	<div class="col-md-offset-3 col-md-6" >
-		{$m_vehicle_driver_value}	</div>
+	<div class="" >
+		{$fr_date_value}	</div>
 
+		</div>
 		
 </div>
 
 
-{END m_vehicle_driver_fieldblock}
+{END fr_date_fieldblock}
 	
 								</td>
 			{END cellblock_section_c2}
+			 
+		
+							
+
+{BEGIN cellblock_section_c12}
+<td
+	{$cell_section_c12}
+	class=" r-ori-vert"
+	
+			data-single
+			
+			data-cellId="section_c12" data-pageid="{$pageid}"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+									</td>
+			{END cellblock_section_c12}
 								</tr>
 	 
 	 
-																</tbody></table>
-				
+		
+						<tr>
+						
+
+{BEGIN cellblock_section_c}
+<td
+	{$cell_section_c}
+	class=" r-ori-vert"
+	
+			data-single
+			
+			data-cellId="section_c" data-pageid="{$pageid}"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+									</td>
+			{END cellblock_section_c}
+			 
+		
+							
+
+{BEGIN cellblock_section_c13}
+<td
+	{$cell_section_c13}
+	class=" r-ori-vert"
+	
+			data-single
+			
+			data-cellId="section_c13" data-pageid="{$pageid}"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+									</td>
+			{END cellblock_section_c13}
+								</tr>
+	 
+	 
+		
+						<tr>
+						
+
+{BEGIN cellblock_section_c7}
+<td
+	{$cell_section_c7}
+	class=" r-ori-vert"
+	
+			data-single
+			
+			data-cellId="section_c7" data-pageid="{$pageid}"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+									</td>
+			{END cellblock_section_c7}
+			 
+		
+							
+
+{BEGIN cellblock_section_c14}
+<td
+	{$cell_section_c14}
+	class=" r-ori-vert"
+	
+			data-single
+			
+			data-cellId="section_c14" data-pageid="{$pageid}"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+									</td>
+			{END cellblock_section_c14}
+								</tr>
+	 
+	 
+		
+						<tr>
+						
+
+{BEGIN cellblock_section_c6}
+<td
+	{$cell_section_c6}
+	class=" r-ori-vert"
+	
+			data-single
+			
+			data-cellId="section_c6" data-pageid="{$pageid}"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+									</td>
+			{END cellblock_section_c6}
+			 
+		
+							
+
+{BEGIN cellblock_section_c15}
+<td
+	{$cell_section_c15}
+	class=" r-ori-vert"
+	
+			data-single
+			
+			data-cellId="section_c15" data-pageid="{$pageid}"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+									</td>
+			{END cellblock_section_c15}
+								</tr>
+			</tbody></table>
+{END section_block}
+		  </div>
+		</div>
+	</div>
+											 
+	<div class="panel panel-default form-section" data-itemtype="section" data-itemid="section1" {$item_section1} data-pageid="{$pageid}" data-page="t_booking_view_view">
+		<div class="panel-heading" role="tab" {$section_section2_headattrs} 
+			data-toggle="collapse"  
+
+				href="#section2{$pageid}" aria-expanded="true" aria-controls="section2"
+
+		>
+		  <h4 class="panel-title">
+		  				<a role="button" >
+							</a>
+					  </h4>
+		</div>
+		<div  class="panel-collapse collapse in {$section_section2_xtrclass}" role="tabpanel"  {$section_section2_attrs}
+
+				id="section2{$pageid}" 
+		>
+		  <div class="panel-body">
+			{BEGIN section1_block}
+
+
+
+
+ 
+	 
+												
 {BEGIN details_m_disposition}
 <div data-itemtype="details_preview" data-itemid="details_preview" {$item_details_preview} data-pageid="{$pageid}" class="bs-details"> 
 	<div class="panel panel-info details-grid">
@@ -328,11 +607,13 @@
 </div>
 {END details_m_disposition}
 	
-				 
-	 
-												<table 
+				{END section1_block}
+		  </div>
+		</div>
+	</div>
+											<table 
 	data-body-align="center"
-	data-location="section" id="form_section_{$pageid}" data-makeup="small" {$form_section} data-pageid="{$pageid}" 
+	data-location="grid" id="form_grid_{$pageid}" data-makeup="small" {$form_grid} data-pageid="{$pageid}" 
 	class="r-edit-form" cellpadding="0" cellspacing="0" 
 	{$grid_hiddenattr} 
 		data-form-width="1"
@@ -340,97 +621,50 @@
 		data-v-width="4"
 	>
 	<tbody>
-										<tr {$row_section_6} >
+										<tr {$row_grid_0} >
 										
 
-{BEGIN cellblock_section_c7}
+{BEGIN cellblock_grid_c3}
 <td
-	{$cell_section_c7}
+	{$cell_grid_c3}
 	class=" r-ori-vert"
 	
-			data-single
 				data-fullwidth
 		
-			data-cellId="section_c7" data-pageid="{$pageid}"
+			data-cellId="grid_c3" data-pageid="{$pageid}"
 		data-v-cell="4"
 		
 >
 	<div edit-form-cell class="clearfix">
 				
-{BEGIN t_booking_from_date_fieldblock}
+{BEGIN Voucher_fieldblock}
 
 
-<div class="r-integrated-field form-group clearfix {$fielddispclass_t_booking_from_date}  r-vertical-field" data-fieldname="t_booking_from_date" data-signal-error-for="t_booking_from_date{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field2" {$item_integrated_edit_field2} data-pageid="{$pageid}" data-field="t_booking_from_date" data-fieldname="t_booking_from_date" >
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Voucher}  r-vertical-field" data-fieldname="Voucher" data-signal-error-for="Voucher{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field" {$item_integrated_edit_field} data-pageid="{$pageid}" data-field="Voucher" data-fieldname="Voucher" >
 
 	
-	<label class="col-md-offset-3 col-md-6" for="{$labelfor_t_booking_from_date}">
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_Voucher}">
 		
-		{BEGIN t_booking_from_date_label}{$label t_booking_view t_booking_from_date }{END t_booking_from_date_label}
+		{BEGIN Voucher_label}{$label t_booking_view Voucher }{END Voucher_label}
 	</label>
 	<div class="col-md-offset-3 col-md-6" >
-		{$t_booking_from_date_value}	</div>
+		{$Voucher_value}	</div>
 
 		
 </div>
 
 
-{END t_booking_from_date_fieldblock}
+{END Voucher_fieldblock}
 	
 								</td>
-			{END cellblock_section_c7}
-								</tr>
-	 
-	 
-														<tr {$row_section_7} >
-										
-
-{BEGIN cellblock_section_c6}
-<td
-	{$cell_section_c6}
-	class=" r-ori-vert"
-	
-			data-single
-				data-fullwidth
-		
-			data-cellId="section_c6" data-pageid="{$pageid}"
-		data-v-cell="4"
-		
->
-	<div edit-form-cell class="clearfix">
-				
-{BEGIN t_booking_to_date_fieldblock}
-
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_t_booking_to_date}  r-vertical-field" data-fieldname="t_booking_to_date" data-signal-error-for="t_booking_to_date{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" {$item_integrated_edit_field3} data-pageid="{$pageid}" data-field="t_booking_to_date" data-fieldname="t_booking_to_date" >
-
-	
-	<label class="col-md-offset-3 col-md-6" for="{$labelfor_t_booking_to_date}">
-		
-		{BEGIN t_booking_to_date_label}{$label t_booking_view t_booking_to_date }{END t_booking_to_date_label}
-	</label>
-	<div class="col-md-offset-3 col-md-6" >
-		{$t_booking_to_date_value}	</div>
-
-		
-</div>
-
-
-{END t_booking_to_date_fieldblock}
-	
-								</td>
-			{END cellblock_section_c6}
+			{END cellblock_grid_c3}
 								</tr>
 			</tbody></table>
-{END section_block}
-		  </div>
-		</div>
-	</div>
-	
-				{END grid_block}
+{END grid_block}
 									{BEGIN below-grid_block}
 <div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}"
-		data-v-width="2"
-	data-v-margin="0"
+		data-v-width="4"
+	data-v-margin="1"
 	
 >		
 	 

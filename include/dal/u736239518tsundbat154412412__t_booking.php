@@ -17,6 +17,8 @@ $dalTablet_booking["m_vehicle_id"] = array("type"=>3,"varname"=>"fldm_vehicle_id
 $dalTablet_booking["t_booking_user"] = array("type"=>200,"varname"=>"t_booking_user", "name" => "t_booking_user", "autoInc" => "0");
 $dalTablet_booking["m_vehicle_driver"] = array("type"=>200,"varname"=>"fldm_vehicle_driver", "name" => "m_vehicle_driver", "autoInc" => "0");
 $dalTablet_booking["m_plat"] = array("type"=>200,"varname"=>"fldm_plat", "name" => "m_plat", "autoInc" => "0");
+$dalTablet_booking["Voucher"] = array("type"=>200,"varname"=>"Voucher", "name" => "Voucher", "autoInc" => "0");
+$dalTablet_booking["flag"] = array("type"=>3,"varname"=>"flag", "name" => "flag", "autoInc" => "0");
 $dalTablet_booking["t_booking_id"]["key"]=true;
 
 $dal_info["u736239518tsundbat154412412__t_booking"] = &$dalTablet_booking;

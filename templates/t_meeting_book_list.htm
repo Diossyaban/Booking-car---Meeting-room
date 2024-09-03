@@ -296,16 +296,34 @@
 				<div class="row">
 			 
 				<div 
-	data-cellId="above-grid_c" data-pageid="{$pageid}"	{$cell_above-grid_c}
-	class="r-align-center r-ori-vert			col-md-12
+	data-cellId="above-grid_c3" data-pageid="{$pageid}"	{$cell_above-grid_c3}
+	class=" r-ori-vert			col-md-12
 	
 ">
 		{BEGIN firstAboveGridCell}
 		 
+		{BEGIN add_link}
+<span data-itemtype="add" data-itemid="add" {$item_add} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-primary   
+	" {$addlink_attrs} href="t_meeting_book_add.php{$stateLink_full}" data-popup >
+					<span class="fa fa-plus-circle"></span>
+							Add new			</a>
+</span>
+{END add_link}
+			{END firstAboveGridCell}	
+	</div>					</div>
+			 
+				<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c" data-pageid="{$pageid}"	{$cell_above-grid_c}
+	class="r-align-center r-ori-vert			col-md-12
+	
+">
+		 
 		<span data-itemtype="snippet" data-itemid="snippet" {$item_snippet} data-pageid="{$pageid}" >
 {$event t_meeting_book_snippet}
-</span>			{END firstAboveGridCell}	
-	</div>					</div>
+</span>		</div>					</div>
 			 
 				<div class="row">
 			 
@@ -314,15 +332,7 @@
 	class=" r-ori-vert			col-md-6
 	
 ">
-		 
-		{BEGIN add_link}
-<span data-itemtype="add" data-itemid="add" {$item_add} data-pageid="{$pageid}" data-small data-button-item>
-	<a type="button" title="" class="btn btn-primary   
-	" {$addlink_attrs} href="t_meeting_book_add.php{$stateLink_full}" data-popup >
-							Add new			</a>
-</span>
-{END add_link}
-		</div>			 
+			</div>			 
 				<div 
 	data-cellId="above-grid_c2" data-pageid="{$pageid}"	{$cell_above-grid_c2}
 	class="r-align-right			col-md-6
@@ -369,7 +379,7 @@
 								[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="fr_date"]:before {
 		content: "{$label t_meeting_book fr_date}";
 	}
-				}
+					}
 </style>
 <table data-location="grid" id="form_grid_{$pageid}" data-makeup="leftbar" {$form_grid} data-pageid="{$pageid}" class=" table table-striped table-bordered r-horizontal-grid  r-flexgrid rnr-b-grid rnr-gridtable"
 	cellpadding="0"
@@ -642,10 +652,10 @@
 		{BEGIN edit_column}
 {BEGIN edit_link}
 <span data-itemtype="grid_edit" data-itemid="grid_edit" {$item_grid_edit} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
-	<a type="button" title="Edit" class="btn-link   
-	 glyphicon glyphicon-pencil" href="t_meeting_book_edit.php?{$editlink}" {$editlink_attrs} title="Edit" data-popup >		
-				
-								</a>
+	<a type="button" title="Edit" class="btn btn-default  btn-sm 
+	" href="t_meeting_book_edit.php?{$editlink}" {$editlink_attrs} title="Edit" data-popup >
+					<span class="fa fa-edit"></span>
+							Edit			</a>
 </span>
 {END edit_link}
 {END edit_column}
@@ -653,10 +663,10 @@
 		{BEGIN view_column}
 {BEGIN view_link}
 <span data-itemtype="grid_view" data-itemid="grid_view" {$item_grid_view} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
-	<a type="button" title="View record" class="btn btn-default   
+	<a type="button" title="View record" class="btn btn-default  btn-sm 
 	" href="t_meeting_book_view.php?{$editlink}" {$viewlink_attrs} title="View" >
-					<span class="glyphicon glyphicon-search"></span>
-										</a>
+					<span class="fa fa-question-circle"></span>
+							View			</a>
 </span>
 {END view_link}
 {END view_column}

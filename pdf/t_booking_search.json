@@ -219,6 +219,12 @@ pdfDocument = {
 				
 			{"text":{$m_vehicle_driver_pdfvalue},"hidden":"{$item_hide_integrated_search_field17}"},
 				
+				
+			{"text":{$Voucher_pdfvalue},"hidden":"{$item_hide_integrated_search_field18}"},
+				
+				
+			{"text":{$flag_pdfvalue},"hidden":"{$item_hide_integrated_search_field19}"},
+				
 		  ],
   "border": [ false, false, false, false ],
               "alignment": 'left',

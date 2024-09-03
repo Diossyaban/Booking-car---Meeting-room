@@ -354,6 +354,7 @@ class DB
 		$dalTables[ $conn->connId ] = array();
 		if( "u736239518tsundbat154412412" == $conn->connId )
 		{
+			$dalTables[$conn->connId][] = array("name" => "m_announcement", "varname" => "u736239518tsundbat154412412__tblm_announcement", "altvarname" => "tblm_announcement", "connId" => "u736239518tsundbat154412412", "schema" => "", "connName" => "u736239518_tsundb at 154.41.24");
 			$dalTables[$conn->connId][] = array("name" => "m_disposition", "varname" => "u736239518tsundbat154412412__tblm_disposition", "altvarname" => "tblm_disposition", "connId" => "u736239518tsundbat154412412", "schema" => "", "connName" => "u736239518_tsundb at 154.41.24");
 			$dalTables[$conn->connId][] = array("name" => "m_disposition_type", "varname" => "u736239518tsundbat154412412__tblm_disposition_type", "altvarname" => "tblm_disposition_type", "connId" => "u736239518tsundbat154412412", "schema" => "", "connName" => "u736239518_tsundb at 154.41.24");
 			$dalTables[$conn->connId][] = array("name" => "m_employee", "varname" => "u736239518tsundbat154412412__tblm_employee", "altvarname" => "tblm_employee", "connId" => "u736239518tsundbat154412412", "schema" => "", "connName" => "u736239518_tsundb at 154.41.24");

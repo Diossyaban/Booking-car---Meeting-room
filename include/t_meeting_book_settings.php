@@ -82,6 +82,9 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelst_meeting_book["English"]["t_meeting_roomid"] = "Room";
 	$fieldToolTipst_meeting_book["English"]["t_meeting_roomid"] = "";
 	$placeHolderst_meeting_book["English"]["t_meeting_roomid"] = "";
+	$fieldLabelst_meeting_book["English"]["meet_approve"] = "Meet Approve";
+	$fieldToolTipst_meeting_book["English"]["meet_approve"] = "";
+	$placeHolderst_meeting_book["English"]["meet_approve"] = "";
 	$pageTitlest_meeting_book["English"]["add"] = "Room Reservation";
 	$pageTitlest_meeting_book["English"]["edit"] = "[{%t_meeting_desc}]";
 	$pageTitlest_meeting_book["English"]["view"] = "{%t_meeting_desc}";
@@ -182,8 +185,10 @@ $tdatat_meeting_book[".isUseAjaxSuggest"] = true;
 
 
 
-		
 								
+													
+					
+	
 
 $tdatat_meeting_book[".ajaxCodeSnippetAdded"] = false;
 
@@ -222,6 +227,7 @@ $tdatat_meeting_book[".googleLikeFields"][] = "fr_date";
 $tdatat_meeting_book[".googleLikeFields"][] = "to_dt";
 $tdatat_meeting_book[".googleLikeFields"][] = "fr_time";
 $tdatat_meeting_book[".googleLikeFields"][] = "to_time";
+$tdatat_meeting_book[".googleLikeFields"][] = "meet_approve";
 
 
 
@@ -255,9 +261,9 @@ $tdatat_meeting_book[".strOrderBy"] = $tstrOrderBy;
 $tdatat_meeting_book[".orderindexes"] = array();
 
 
-$tdatat_meeting_book[".sqlHead"] = "SELECT t_meeting_id,      t_meeting_no,      t_meeting_roomid,      t_meeting_user,      t_meeting_desc,      t_meeting_from_date,      t_meeting_to_date,      user_participant_list,      t_meeting_participant_type,      t_meeting_total_participant,      t_meeting_isminuman,      t_meeting_issnack,      t_meeting_ismakan,      t_meeting_recurring_flag,      t_meeting_status,      DATE(t_meeting_from_date) AS fr_date,      DATE(t_meeting_to_date) AS to_dt,      TIME(t_meeting_from_date) AS fr_time,      TIME(t_meeting_to_date) AS to_time";
-$tdatat_meeting_book[".sqlFrom"] = "FROM      t_meeting_book";
-$tdatat_meeting_book[".sqlWhereExpr"] = "";
+$tdatat_meeting_book[".sqlHead"] = "SELECT t_meeting_id,  t_meeting_no,  t_meeting_roomid,  t_meeting_user,  t_meeting_desc,  t_meeting_from_date,  t_meeting_to_date,  user_participant_list,  t_meeting_participant_type,  t_meeting_total_participant,  t_meeting_isminuman,  t_meeting_issnack,  t_meeting_ismakan,  t_meeting_recurring_flag,  t_meeting_status,  DATE(t_meeting_from_date) AS fr_date,  DATE(t_meeting_to_date) AS to_dt,  TIME(t_meeting_from_date) AS fr_time,  TIME(t_meeting_to_date) AS to_time,  meet_approve";
+$tdatat_meeting_book[".sqlFrom"] = "FROM t_meeting_book";
+$tdatat_meeting_book[".sqlWhereExpr"] = "(meet_approve =1)";
 $tdatat_meeting_book[".sqlTail"] = "";
 
 //fill array of tabs for list page
@@ -706,7 +712,10 @@ $tdatat_meeting_book[".hideMobileList"] = array();
 
 
 	
-	
+		$eventsData = array();
+	$eventsData[] = array( "name" => "t_meeting_roomid_event", "type" => "change" );
+	$edata["fieldEvents"] = $eventsData;
+
 
 // Begin Lookup settings
 				$edata["LookupType"] = 2;
@@ -722,10 +731,11 @@ $tdatat_meeting_book[".hideMobileList"] = array();
 	$edata["LinkFieldType"] = 3;
 	$edata["DisplayField"] = "m_meeting_room_name";
 
-	
+				$edata["LookupWhere"] = "(capacity = 18 AND :params.peserta > 10) OR  (capacity = 12 AND :params.peserta > 5 AND :params.peserta <= 12) OR  (capacity = 6 AND :params.peserta > 3 AND :params.peserta <= 6) OR  (capacity = 4 AND :params.peserta <= 4)";
+
 
 	
-	$edata["LookupOrderBy"] = "id";
+	$edata["LookupOrderBy"] = "m_meeting_room_name";
 
 	
 	
@@ -1771,7 +1781,10 @@ $tdatat_meeting_book[".hideMobileList"] = array();
 	
 		$vdata["NeedEncode"] = true;
 
-	
+		$eventsData = array();
+	$eventsData[] = array( "name" => "t_meeting_total_participant_event1", "type" => "click" );
+	$vdata["fieldViewEvents"] = $eventsData;
+
 		$vdata["truncateText"] = true;
 	$vdata["NumberOfChars"] = 80;
 
@@ -1790,7 +1803,7 @@ $tdatat_meeting_book[".hideMobileList"] = array();
 
 	
 		$eventsData = array();
-	$eventsData[] = array( "name" => "user_participant_list_event", "type" => "change" );
+	$eventsData[] = array( "name" => "t_meeting_total_participant_event", "type" => "change" );
 	$edata["fieldEvents"] = $eventsData;
 
 
@@ -1840,7 +1853,7 @@ $tdatat_meeting_book[".hideMobileList"] = array();
 
 
 // the field's search options settings
-		$fdata["defaultSearchOption"] = "Contains";
+		$fdata["defaultSearchOption"] = "Equals";
 
 			// the default search options list
 				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
@@ -3157,6 +3170,142 @@ $tdatat_meeting_book[".hideMobileList"] = array();
 
 	$tdatat_meeting_book["to_time"] = $fdata;
 		$tdatat_meeting_book[".searchableFields"][] = "to_time";
+//	meet_approve
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 20;
+	$fdata["strName"] = "meet_approve";
+	$fdata["GoodName"] = "meet_approve";
+	$fdata["ownerTable"] = "t_meeting_book";
+	$fdata["Label"] = GetFieldLabel("t_meeting_book","meet_approve");
+	$fdata["FieldType"] = 3;
+
+
+	
+	
+			
+
+		$fdata["strField"] = "meet_approve";
+
+		$fdata["sourceSingle"] = "meet_approve";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "meet_approve";
+
+	
+	
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Readonly");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+							
+	
+//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Contains";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+		$fdata["filterMultiSelect"] = 0;
+		$fdata["filterTotalFields"] = "t_meeting_id";
+		$fdata["filterFormat"] = "Values list";
+		$fdata["showCollapsed"] = false;
+
+		$fdata["sortValueType"] = 0;
+		$fdata["numberOfVisibleItems"] = 10;
+
+		$fdata["filterBy"] = 0;
+
+	
+
+	
+	
+//end of Filters settings
+
+
+	$tdatat_meeting_book["meet_approve"] = $fdata;
+		$tdatat_meeting_book[".searchableFields"][] = "meet_approve";
 
 
 $tables_data["t_meeting_book"]=&$tdatat_meeting_book;
@@ -3231,23 +3380,25 @@ function createSqlQuery_t_meeting_book()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "t_meeting_id,      t_meeting_no,      t_meeting_roomid,      t_meeting_user,      t_meeting_desc,      t_meeting_from_date,      t_meeting_to_date,      user_participant_list,      t_meeting_participant_type,      t_meeting_total_participant,      t_meeting_isminuman,      t_meeting_issnack,      t_meeting_ismakan,      t_meeting_recurring_flag,      t_meeting_status,      DATE(t_meeting_from_date) AS fr_date,      DATE(t_meeting_to_date) AS to_dt,      TIME(t_meeting_from_date) AS fr_time,      TIME(t_meeting_to_date) AS to_time";
-$proto0["m_strFrom"] = "FROM      t_meeting_book";
-$proto0["m_strWhere"] = "";
+$proto0["m_strFieldList"] = "t_meeting_id,  t_meeting_no,  t_meeting_roomid,  t_meeting_user,  t_meeting_desc,  t_meeting_from_date,  t_meeting_to_date,  user_participant_list,  t_meeting_participant_type,  t_meeting_total_participant,  t_meeting_isminuman,  t_meeting_issnack,  t_meeting_ismakan,  t_meeting_recurring_flag,  t_meeting_status,  DATE(t_meeting_from_date) AS fr_date,  DATE(t_meeting_to_date) AS to_dt,  TIME(t_meeting_from_date) AS fr_time,  TIME(t_meeting_to_date) AS to_time,  meet_approve";
+$proto0["m_strFrom"] = "FROM t_meeting_book";
+$proto0["m_strWhere"] = "(meet_approve =1)";
 $proto0["m_strOrderBy"] = "";
 	
 																																																												;
 			$proto0["cipherer"] = null;
 $proto2=array();
-$proto2["m_sql"] = "";
+$proto2["m_sql"] = "meet_approve =1";
 $proto2["m_uniontype"] = "SQLL_UNKNOWN";
-	$obj = new SQLNonParsed(array(
-	"m_sql" => ""
+						$obj = new SQLField(array(
+	"m_strName" => "meet_approve",
+	"m_strTable" => "t_meeting_book",
+	"m_srcTableName" => "t_meeting_book"
 ));
 
 $proto2["m_column"]=$obj;
 $proto2["m_contained"] = array();
-$proto2["m_strCase"] = "";
+$proto2["m_strCase"] = "=1";
 $proto2["m_havingmode"] = false;
 $proto2["m_inBrackets"] = false;
 $proto2["m_useAlias"] = false;
@@ -3557,57 +3708,72 @@ $proto45["m_alias"] = "to_time";
 $obj = new SQLFieldListItem($proto45);
 
 $proto0["m_fieldlist"][]=$obj;
-$proto0["m_fromlist"] = array();
-												$proto48=array();
-$proto48["m_link"] = "SQLL_MAIN";
-			$proto49=array();
-$proto49["m_strName"] = "t_meeting_book";
-$proto49["m_srcTableName"] = "t_meeting_book";
-$proto49["m_columns"] = array();
-$proto49["m_columns"][] = "t_meeting_id";
-$proto49["m_columns"][] = "t_meeting_roomid";
-$proto49["m_columns"][] = "t_meeting_no";
-$proto49["m_columns"][] = "t_meeting_user";
-$proto49["m_columns"][] = "t_meeting_desc";
-$proto49["m_columns"][] = "t_meeting_from_date";
-$proto49["m_columns"][] = "t_meeting_to_date";
-$proto49["m_columns"][] = "t_meeting_from_time";
-$proto49["m_columns"][] = "t_meeting_to_time";
-$proto49["m_columns"][] = "user_participant_list";
-$proto49["m_columns"][] = "t_meeting_participant_type";
-$proto49["m_columns"][] = "t_meeting_total_participant";
-$proto49["m_columns"][] = "t_meeting_isminuman";
-$proto49["m_columns"][] = "t_meeting_issnack";
-$proto49["m_columns"][] = "t_meeting_ismakan";
-$proto49["m_columns"][] = "t_meeting_recurring_flag";
-$proto49["m_columns"][] = "t_meeting_status";
-$proto49["m_columns"][] = "add_user";
-$proto49["m_columns"][] = "add_date";
-$proto49["m_columns"][] = "edit_user";
-$proto49["m_columns"][] = "edit_date";
-$obj = new SQLTable($proto49);
+						$proto48=array();
+			$obj = new SQLField(array(
+	"m_strName" => "meet_approve",
+	"m_strTable" => "t_meeting_book",
+	"m_srcTableName" => "t_meeting_book"
+));
 
-$proto48["m_table"] = $obj;
-$proto48["m_sql"] = "t_meeting_book";
-$proto48["m_alias"] = "";
+$proto48["m_sql"] = "meet_approve";
 $proto48["m_srcTableName"] = "t_meeting_book";
-$proto50=array();
-$proto50["m_sql"] = "";
-$proto50["m_uniontype"] = "SQLL_UNKNOWN";
+$proto48["m_expr"]=$obj;
+$proto48["m_alias"] = "";
+$obj = new SQLFieldListItem($proto48);
+
+$proto0["m_fieldlist"][]=$obj;
+$proto0["m_fromlist"] = array();
+												$proto50=array();
+$proto50["m_link"] = "SQLL_MAIN";
+			$proto51=array();
+$proto51["m_strName"] = "t_meeting_book";
+$proto51["m_srcTableName"] = "t_meeting_book";
+$proto51["m_columns"] = array();
+$proto51["m_columns"][] = "t_meeting_id";
+$proto51["m_columns"][] = "t_meeting_roomid";
+$proto51["m_columns"][] = "t_meeting_no";
+$proto51["m_columns"][] = "t_meeting_user";
+$proto51["m_columns"][] = "t_meeting_desc";
+$proto51["m_columns"][] = "t_meeting_from_date";
+$proto51["m_columns"][] = "t_meeting_to_date";
+$proto51["m_columns"][] = "t_meeting_from_time";
+$proto51["m_columns"][] = "t_meeting_to_time";
+$proto51["m_columns"][] = "user_participant_list";
+$proto51["m_columns"][] = "t_meeting_participant_type";
+$proto51["m_columns"][] = "t_meeting_total_participant";
+$proto51["m_columns"][] = "t_meeting_isminuman";
+$proto51["m_columns"][] = "t_meeting_issnack";
+$proto51["m_columns"][] = "t_meeting_ismakan";
+$proto51["m_columns"][] = "t_meeting_recurring_flag";
+$proto51["m_columns"][] = "t_meeting_status";
+$proto51["m_columns"][] = "add_user";
+$proto51["m_columns"][] = "add_date";
+$proto51["m_columns"][] = "edit_user";
+$proto51["m_columns"][] = "edit_date";
+$proto51["m_columns"][] = "meet_approve";
+$obj = new SQLTable($proto51);
+
+$proto50["m_table"] = $obj;
+$proto50["m_sql"] = "t_meeting_book";
+$proto50["m_alias"] = "";
+$proto50["m_srcTableName"] = "t_meeting_book";
+$proto52=array();
+$proto52["m_sql"] = "";
+$proto52["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto50["m_column"]=$obj;
-$proto50["m_contained"] = array();
-$proto50["m_strCase"] = "";
-$proto50["m_havingmode"] = false;
-$proto50["m_inBrackets"] = false;
-$proto50["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto50);
+$proto52["m_column"]=$obj;
+$proto52["m_contained"] = array();
+$proto52["m_strCase"] = "";
+$proto52["m_havingmode"] = false;
+$proto52["m_inBrackets"] = false;
+$proto52["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto52);
 
-$proto48["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto48);
+$proto50["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto50);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
@@ -3623,7 +3789,7 @@ $queryData_t_meeting_book = createSqlQuery_t_meeting_book();
 	
 																																																												;
 
-																			
+																				
 
 $tdatat_meeting_book[".sqlquery"] = $queryData_t_meeting_book;
 

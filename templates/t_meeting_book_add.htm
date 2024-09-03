@@ -175,26 +175,26 @@
 >
 	<div edit-form-cell class="clearfix">
 				
-{BEGIN t_meeting_total_participant_fieldblock}
+{BEGIN t_meeting_desc_fieldblock}
 
 
-<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_total_participant}  r-horizontal-field form-horizontal" 
-	data-signal-error-for="t_meeting_total_participant{$id}" 
-	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field11" {$item_integrated_edit_field11} data-pageid="{$pageid}" data-field="t_meeting_total_participant" data-fieldname="t_meeting_total_participant" >
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_desc}  r-horizontal-field form-horizontal" 
+	data-signal-error-for="t_meeting_desc{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" {$item_integrated_edit_field3} data-pageid="{$pageid}" data-field="t_meeting_desc" data-fieldname="t_meeting_desc" >
 
-	<label class="r-edit-label control-label" for="{$labelfor_t_meeting_total_participant}">
-		{BEGIN t_meeting_total_participant_label}{$label t_meeting_book t_meeting_total_participant }{END t_meeting_total_participant_label}
+	<label class="r-edit-label control-label" for="{$labelfor_t_meeting_desc}">
+		{BEGIN t_meeting_desc_label}{$label t_meeting_book t_meeting_desc }{END t_meeting_desc_label}
 	</label>
 	<div class="r-edit-field">
-		{$t_meeting_total_participant_editcontrol}	</div>
-	<div class="r-edit-tooltip" data-helpfor="t_meeting_total_participant">
+		{$t_meeting_desc_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="t_meeting_desc">
 		<div class="text-muted" >
-		{$tooltip t_meeting_book t_meeting_total_participant }		</div>
+		{$tooltip t_meeting_book t_meeting_desc }		</div>
 	</div>
 </div>
 
 
-{END t_meeting_total_participant_fieldblock}
+{END t_meeting_desc_fieldblock}
 	
 								</td>
 			{END cellblock_section_c4}
@@ -256,26 +256,26 @@
 >
 	<div edit-form-cell class="clearfix">
 				
-{BEGIN t_meeting_desc_fieldblock}
+{BEGIN t_meeting_total_participant_fieldblock}
 
 
-<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_desc}  r-horizontal-field form-horizontal" 
-	data-signal-error-for="t_meeting_desc{$id}" 
-	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" {$item_integrated_edit_field3} data-pageid="{$pageid}" data-field="t_meeting_desc" data-fieldname="t_meeting_desc" >
+<div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_total_participant}  r-horizontal-field form-horizontal" 
+	data-signal-error-for="t_meeting_total_participant{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="t_meeting_total_participant" {$item_t_meeting_total_participant} data-pageid="{$pageid}" data-field="t_meeting_total_participant" data-fieldname="t_meeting_total_participant" >
 
-	<label class="r-edit-label control-label" for="{$labelfor_t_meeting_desc}">
-		{BEGIN t_meeting_desc_label}{$label t_meeting_book t_meeting_desc }{END t_meeting_desc_label}
+	<label class="r-edit-label control-label" for="{$labelfor_t_meeting_total_participant}">
+		{BEGIN t_meeting_total_participant_label}{$label t_meeting_book t_meeting_total_participant }{END t_meeting_total_participant_label}
 	</label>
 	<div class="r-edit-field">
-		{$t_meeting_desc_editcontrol}	</div>
-	<div class="r-edit-tooltip" data-helpfor="t_meeting_desc">
+		{$t_meeting_total_participant_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="t_meeting_total_participant">
 		<div class="text-muted" >
-		{$tooltip t_meeting_book t_meeting_desc }		</div>
+		{$tooltip t_meeting_book t_meeting_total_participant }		</div>
 	</div>
 </div>
 
 
-{END t_meeting_desc_fieldblock}
+{END t_meeting_total_participant_fieldblock}
 	
 								</td>
 			{END cellblock_section_c2}
@@ -300,7 +300,7 @@
 
 <div class="r-integrated-field form-group clearfix {$fielddispclass_t_meeting_roomid}  r-horizontal-field form-horizontal" 
 	data-signal-error-for="t_meeting_roomid{$id}" 
-	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field1" {$item_integrated_edit_field1} data-pageid="{$pageid}" data-field="t_meeting_roomid" data-fieldname="t_meeting_roomid" >
+	data-itemtype="integrated_edit_field" data-itemid="t_meeting_roomid" {$item_t_meeting_roomid} data-pageid="{$pageid}" data-field="t_meeting_roomid" data-fieldname="t_meeting_roomid" >
 
 	<label class="r-edit-label control-label" for="{$labelfor_t_meeting_roomid}">
 		{BEGIN t_meeting_roomid_label}{$label t_meeting_book t_meeting_roomid }{END t_meeting_roomid_label}
@@ -381,7 +381,7 @@
 
 <div class="r-integrated-field form-group clearfix {$fielddispclass_user_participant_list}  r-horizontal-field form-horizontal" 
 	data-signal-error-for="user_participant_list{$id}" 
-	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field9" {$item_integrated_edit_field9} data-pageid="{$pageid}" data-page="t_meeting_book_add" data-field="user_participant_list" data-fieldname="user_participant_list" >
+	data-itemtype="integrated_edit_field" data-itemid="user_participant_list" {$item_user_participant_list} data-pageid="{$pageid}" data-page="t_meeting_book_add" data-field="user_participant_list" data-fieldname="user_participant_list" >
 
 	<label class="r-edit-label control-label" for="{$labelfor_user_participant_list}">
 		{BEGIN user_participant_list_label}{$label t_meeting_book user_participant_list }{END user_participant_list_label}
@@ -619,8 +619,7 @@
 									</td>
 			{END cellblock_section_c8}
 			 
-		
-							
+																
 
 {BEGIN cellblock_section_c9}
 <td
@@ -634,7 +633,29 @@
 		
 >
 	<div edit-form-cell class="clearfix">
-									</td>
+				
+{BEGIN meet_approve_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_meet_approve}  r-horizontal-field form-horizontal" 
+	data-signal-error-for="meet_approve{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="meet_approve" {$item_meet_approve} data-pageid="{$pageid}" data-field="meet_approve" data-fieldname="meet_approve" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_meet_approve}">
+		{BEGIN meet_approve_label}{$label t_meeting_book meet_approve }{END meet_approve_label}
+	</label>
+	<div class="r-edit-field">
+		{$meet_approve_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="meet_approve">
+		<div class="text-muted" >
+		{$tooltip t_meeting_book meet_approve }		</div>
+	</div>
+</div>
+
+
+{END meet_approve_fieldblock}
+	
+								</td>
 			{END cellblock_section_c9}
 								</tr>
 			</tbody></table>

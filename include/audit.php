@@ -384,10 +384,6 @@ class AuditTrailTable
 		{
 			return false;
 		}
-		if($table=="View")
-		{
-			return false;
-		}
 		if($table=="tsun_noti")
 		{
 			return false;
@@ -449,6 +445,30 @@ class AuditTrailTable
 			return false;
 		}
 		if($table=="m_meeting_room")
+		{
+			return false;
+		}
+		if($table=="m_announcement")
+		{
+			return false;
+		}
+		if($table=="t_meeting_book_view")
+		{
+			return false;
+		}
+		if($table=="t_booking_view1")
+		{
+			return false;
+		}
+		if($table=="t_meeting_book_view1")
+		{
+			return false;
+		}
+		if($table=="disposisiview")
+		{
+			return false;
+		}
+		if($table=="m_meeting_room1")
 		{
 			return false;
 		}
@@ -788,10 +808,6 @@ class AuditTrailFile
 		{
 			return false;
 		}
-		if($table=="View")
-		{
-			return false;
-		}
 		if($table=="tsun_noti")
 		{
 			return false;
@@ -853,6 +869,30 @@ class AuditTrailFile
 			return false;
 		}
 		if($table=="m_meeting_room")
+		{
+			return false;
+		}
+		if($table=="m_announcement")
+		{
+			return false;
+		}
+		if($table=="t_meeting_book_view")
+		{
+			return false;
+		}
+		if($table=="t_booking_view1")
+		{
+			return false;
+		}
+		if($table=="t_meeting_book_view1")
+		{
+			return false;
+		}
+		if($table=="disposisiview")
+		{
+			return false;
+		}
+		if($table=="m_meeting_room1")
 		{
 			return false;
 		}
